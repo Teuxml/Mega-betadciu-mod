@@ -66,7 +66,7 @@ class OptionsMenu extends MusicBeatState
 			new WatermarkOption("Enable and disable all watermarks from the engine."),
 			new ScoreScreen("Show the score screen after the end of a song"),
 			new ShowInput("Display every single input in the score screen."),
-			new Optimization("No backgrounds, no characters, centered notes, no player 2."),
+			new Optimization("Turn everything exept the notes off so your old pc doesn't burn"),
 			new BotPlay("Showcase your charts and mods with autoplay."),
 		])
 		
