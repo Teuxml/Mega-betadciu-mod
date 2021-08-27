@@ -182,12 +182,14 @@ class Character extends FlxSprite
 				animation.addByPrefix('singRIGHT', 'eteled Sing Note RIGHT', 24);
 				animation.addByPrefix('singDOWN', 'eteled Sing Note DOWN', 24);
 				animation.addByPrefix('singLEFT', 'eteled Sing Note LEFT', 24);
+				animation.addByPrefix('SCREAM', 'eteled SCREAM', 24);
 
 				addOffset('idle');
 				addOffset("singUP", -18 66);
 				addOffset("singRIGHT", -21 -62);
 				addOffset("singLEFT", 243 19);
 				addOffset("singDOWN", -6 -98);
+				addOffset("SCREAM", 142 151);
 
 				playAnim('idle');
 			case 'spooky':
