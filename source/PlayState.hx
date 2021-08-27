@@ -745,6 +745,48 @@ class PlayState extends MusicBeatState
 	
 						add(stageCurtains);
 				}
+				case 'mii-channel-glitch':
+					{
+						defaultCamZoom = 0.68;
+						curStage = 'mii-channel-glitch';
+						useSetCamera = true;
+						var bg:FlxSprite = new FlxSprite(-550, -230).loadGraphic(Paths.image('corruptback', 'eteled'));
+						if(FlxG.save.data.antialiasing)
+							{
+								bg.antialiasing = true;
+							}
+						bg.scrollFactor.set(1, 1);
+						bg.active = false;
+						add(bg);
+						grpHallway = new FlxTypedGroup<FlxSprite>();
+						add(grpHallway);
+						var bg:FlxSprite = new FlxSprite(-360, -210).loadGraphic(Paths.image('glitchhallway2ndsong', 'eteled'));
+						if(FlxG.save.data.antialiasing)
+							{
+								bg.antialiasing = true;
+							}
+						bg.scrollFactor.set(1, 1);
+						bg.active = false;
+						bg.y += FlxG.height * 2;
+						grpHallway.add(bg);
+
+						foregroundGlitch = new FlxSprite(0, 0);
+						foregroundGlitch.frames = Paths.getSparrowAtlas('glitch effects/glitchAnim', 'eteled');
+						foregroundGlitch.animation.addByPrefix('idle', 'g', 24, true);
+						foregroundGlitch = new FlxSprite(0, 0);
+						foregroundGlitch.frames = Paths.getSparrowAtlas('glitch effects/noise2', 'eteled');
+						foregroundGlitch.animation.addByPrefix('idle', 'f', 24, true);
+						foregroundGlitch = new FlxSprite(0, 0);
+						foregroundGlitch.frames = Paths.getSparrowAtlas('glitch effects/noise2R', 'eteled');
+						foregroundGlitch.animation.addByPrefix('idle', 'f', 24, true);
+						foregroundGlitch = new FlxSprite(0, 0);
+						foregroundGlitch.frames = Paths.getSparrowAtlas('glitch effects/sheet', 'eteled');
+						foregroundGlitch.animation.addByPrefix('idle', 'Idle', 24, true);
+						foregroundGlitch = new FlxSprite(0, 0);
+						foregroundGlitch.frames = Paths.getSparrowAtlas('glitch effects/sheeto2', 'eteled');
+						foregroundGlitch.animation.addByPrefix('idle', 'n', 24, true);
+						dad = new Character(100, 100, 'eteled3');
+					}
 			default:
 			{
 					defaultCamZoom = 0.9;
@@ -885,6 +927,31 @@ class PlayState extends MusicBeatState
 				boyfriend.y += 220;
 				gf.x += 180;
 				gf.y += 300;
+
+				case 'mii-channel' | 'mii-channel-glitch' | 'mii-channel-dark':
+					boyfriend.x += 595;
+					boyfriend.y += 55;
+					gf.x += 180;
+					gf.y += 0;
+					dad.x += 47;
+					dad.y += 43;
+					camPos.x = 1056;
+					camPos.y = 510.69;
+					
+				case 'hallway':
+					camPos.x = 1176.3;
+					camPos.y = 515.87;
+					boyfriend.x += 585;
+					boyfriend.y += 65;
+					gf.x += 180;
+					gf.y -= 20;
+					dad.x += 17;
+					dad.y += 63;
+					if (useDad2) {
+						dad2.x += 17;
+						dad2.y += 63;
+					} 
+					gf.color = FlxColor.fromHSL(gf.color.hue, gf.color.saturation, 0.5, 1);
 		}
 
 		if (!PlayStateChangeables.Optimize)
@@ -911,9 +978,77 @@ class PlayState extends MusicBeatState
 			PlayStateChangeables.botPlay = true;
 		}
 
-		trace('uh ' + PlayStateChangeables.safeFrames);
+	}
+	glitchLayer = new FlxTypedGroup<FlxSprite>();
+	add(glitchLayer);
+	if (!PlayStateChangeables.Optimize)
+	{
+		
+		add(gf);
 
-		trace("SF CALC: " + Math.floor((PlayStateChangeables.safeFrames / 60) * 1000));
+		// Shitty layering but whatev it works LOL
+		if (curStage == 'limo')
+			add(limo);
+
+		add(dad);
+		if (useDad2)
+			add(dad2);
+		add(boyfriend);
+	}
+
+	switch (curStage) {
+		case 'mii-channel':
+			var stageCurtains:FlxSprite = new FlxSprite(-449, -299);//.loadGraphic(Paths.image('stagecurtains'));
+			stageCurtains.frames = Paths.getSparrowAtlas('miibuttons', 'eteled');
+			stageCurtains.animation.addByPrefix('idle', 'stagecurtains', 24);
+			stageCurtains.animation.play('idle');
+			stageCurtains.updateHitbox();
+			if(FlxG.save.data.antialiasing)
+				{
+					stageCurtains.antialiasing = true;
+				}
+			stageCurtains.scrollFactor.set(1.17, 1.17);
+
+			add(stageCurtains);
+		case 'mii-channel-glitch':
+			channelOverlay = new FlxSprite(-550, -230).loadGraphic(Paths.image('overlayphase2', 'eteled'));
+			if(FlxG.save.data.antialiasing)
+			{
+				channelOverlay.antialiasing = true;
+			}
+			channelOverlay.scrollFactor.set(1, 1);
+			channelOverlay.active = false;
+			add(channelOverlay);
+			
+			miiButtons = new FlxSprite(-449, -299);//.loadGraphic(Paths.image('stagecurtains'));
+			miiButtons.frames = Paths.getSparrowAtlas('Glitchmiibuttons', 'eteled');
+			miiButtons.animation.addByPrefix('idle', 'stagecurtains', 24);
+			miiButtons.animation.play('idle');
+			miiButtons.updateHitbox();
+			if(FlxG.save.data.antialiasing)
+			{
+				miiButtons.antialiasing = true;
+			}
+			miiButtons.scrollFactor.set(1.17, 1.17);
+
+			add(miiButtons);
+	}
+	foregroundGlitchLayer = new FlxTypedGroup<FlxSprite>();
+	add(foregroundGlitchLayer);
+	if (loadRep)
+	{
+		FlxG.watch.addQuick('rep rpesses', repPresses);
+		FlxG.watch.addQuick('rep releases', repReleases);
+		// FlxG.watch.addQuick('Queued',inputsQueued);
+
+		PlayStateChangeables.useDownscroll = rep.replay.isDownscroll;
+		PlayStateChangeables.safeFrames = rep.replay.sf;
+		PlayStateChangeables.botPlay = true;
+	}
+
+	trace('uh ' + PlayStateChangeables.safeFrames);
+
+	trace("SF CALC: " + Math.floor((PlayStateChangeables.safeFrames / 60) * 1000));
 
 		var doof:DialogueBox = new DialogueBox(false, dialogue);
 		// doof.x += 70;
@@ -2553,6 +2688,18 @@ class PlayState extends MusicBeatState
 
 				if (dad.curCharacter == 'mom')
 					vocals.volume = 1;
+
+				switch (curStage)
+				{
+					case 'mii-channel' | 'mii-channel-glitch' | 'mii-channel-dark':
+						if (screamMode) {
+							camFollow.x = 500;
+							camFollow.y = 501.62;
+						} else {
+							camFollow.x = 689;
+							camFollow.y = 501.62;
+						}
+				}
 			}
 
 			if (PlayState.SONG.notes[Std.int(curStep / 16)].mustHitSection && camFollow.x != boyfriend.getMidpoint().x - 100)
