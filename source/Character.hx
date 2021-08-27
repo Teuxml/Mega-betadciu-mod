@@ -173,6 +173,42 @@ class Character extends FlxSprite
 				addOffset("singDOWN", 0, -30);
 
 				playAnim('idle');
+			case 'whittyCrazy':
+				// DAD ANIMATION LOADING CODE
+				tex = Paths.getSparrowAtlas('characters/Blantad', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'Whitty idle dance', 24);
+				animation.addByPrefix('singUP', 'Whitty Sing Note UP', 24);
+				animation.addByPrefix('singRIGHT', 'Whitty sing note right', 24);
+				animation.addByPrefix('singDOWN', 'Whitty Sing Note DOWN', 24);
+				animation.addByPrefix('singLEFT', 'Whitty Sing Note LEFT', 24);
+
+				addOffset('idle');
+				addOffset("singUP", -6, 50);
+				addOffset("singRIGHT", 0, 27);
+				addOffset("singLEFT", -10, 10);
+				addOffset("singDOWN", 0, -30);
+
+				playAnim('idle');
+			case 'hellchartCarol':
+				// DAD ANIMATION LOADING CODE
+				tex = Paths.getSparrowAtlas('characters/Blantad', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'carol idle', 24);
+				animation.addByPrefix('singUP', 'carol up', 24);
+				animation.addByPrefix('singRIGHT', 'carol right', 24);
+				animation.addByPrefix('singDOWN', 'carol down', 24);
+				animation.addByPrefix('singLEFT', 'carol left', 24);
+
+				addOffset('idle');
+				addOffset("singUP", -6, 50);
+				addOffset("singRIGHT", 0, 27);
+				addOffset("singLEFT", -10, 10);
+				addOffset("singDOWN", 0, -30);
+
+				playAnim('idle');
+
+
 			case 'eteled2':
 				// DAD ANIMATION LOADING CODE
 				tex = Paths.getSparrowAtlas('characters/Blantad', 'shared');
