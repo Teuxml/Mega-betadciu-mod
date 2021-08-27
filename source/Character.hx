@@ -173,6 +173,78 @@ class Character extends FlxSprite
 				addOffset("singDOWN", 0, -30);
 
 				playAnim('idle');
+			case 'bonziBuddy':
+				// DAD ANIMATION LOADING CODE
+				tex = Paths.getSparrowAtlas('characters/bonzi_assets', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'bonzi idle', 24);
+				animation.addByPrefix('singUP', 'bonzi up', 24);
+				animation.addByPrefix('singRIGHT', 'bonzi right', 24);
+				animation.addByPrefix('singDOWN', 'bonzi down', 24);
+				animation.addByPrefix('singLEFT', 'bonzi left', 24);
+
+				addOffset('idle');
+				addOffset("singUP", -6, 50);
+				addOffset("singRIGHT", 0, 27);
+				addOffset("singLEFT", -10, 10);
+				addOffset("singDOWN", 0, -30);
+
+				playAnim('idle');
+			case 'whittyCrazy':
+				// DAD ANIMATION LOADING CODE
+				tex = Paths.getSparrowAtlas('characters/Blantad', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'Whitty idle dance', 24);
+				animation.addByPrefix('singUP', 'Whitty Sing Note UP', 24);
+				animation.addByPrefix('singRIGHT', 'Whitty sing note right', 24);
+				animation.addByPrefix('singDOWN', 'Whitty Sing Note DOWN', 24);
+				animation.addByPrefix('singLEFT', 'Whitty Sing Note LEFT', 24);
+
+				addOffset('idle');
+				addOffset("singUP", -6, 50);
+				addOffset("singRIGHT", 0, 27);
+				addOffset("singLEFT", -10, 10);
+				addOffset("singDOWN", 0, -30);
+
+				playAnim('idle');
+			case 'hellchartCarol':
+				// DAD ANIMATION LOADING CODE
+				tex = Paths.getSparrowAtlas('characters/Blantad', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'carol idle', 24);
+				animation.addByPrefix('singUP', 'carol up', 24);
+				animation.addByPrefix('singRIGHT', 'carol right', 24);
+				animation.addByPrefix('singDOWN', 'carol down', 24);
+				animation.addByPrefix('singLEFT', 'carol left', 24);
+
+				addOffset('idle');
+				addOffset("singUP", -6, 50);
+				addOffset("singRIGHT", 0, 27);
+				addOffset("singLEFT", -10, 10);
+				addOffset("singDOWN", 0, -30);
+
+				playAnim('idle');
+
+
+			case 'eteled2':
+				// DAD ANIMATION LOADING CODE
+				tex = Paths.getSparrowAtlas('characters/Blantad', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'eteled idle dance', 24);
+				animation.addByPrefix('singUP', 'eteled Sing Note UP', 24);
+				animation.addByPrefix('singRIGHT', 'eteled Sing Note RIGHT', 24);
+				animation.addByPrefix('singDOWN', 'eteled Sing Note DOWN', 24);
+				animation.addByPrefix('singLEFT', 'eteled Sing Note LEFT', 24);
+				animation.addByPrefix('SCREAM', 'eteled SCREAM', 24);
+
+				addOffset('idle');
+				addOffset("singUP", -18 66);
+				addOffset("singRIGHT", -21 -62);
+				addOffset("singLEFT", 243 19);
+				addOffset("singDOWN", -6 -98);
+				addOffset("SCREAM", 142 151);
+
+				playAnim('idle');
 			case 'spooky':
 				tex = Paths.getSparrowAtlas('characters/spooky_kids_assets');
 				frames = tex;
