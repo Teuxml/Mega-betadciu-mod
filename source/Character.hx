@@ -190,6 +190,23 @@ class Character extends FlxSprite
 				addOffset("singDOWN", 0, -30);
 
 				playAnim('idle');
+			case 'xigmundPsychic':
+				// DAD ANIMATION LOADING CODE
+				tex = Paths.getSparrowAtlas('characters/alienpsychic_assets', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'INSANEidle', 24);
+				animation.addByPrefix('singUP', 'INSANEup', 24);
+				animation.addByPrefix('singRIGHT', 'INSANEright', 24);
+				animation.addByPrefix('singDOWN', 'INSANEdown', 24);
+				animation.addByPrefix('singLEFT', 'INSANEleft', 24);
+
+				addOffset('idle');
+				addOffset("singUP", -6, 50);
+				addOffset("singRIGHT", 0, 27);
+				addOffset("singLEFT", -10, 10);
+				addOffset("singDOWN", 0, -30);
+
+				playAnim('idle');
 			case 'whittyCrazy':
 				// DAD ANIMATION LOADING CODE
 				tex = Paths.getSparrowAtlas('characters/Blantad', 'shared');
