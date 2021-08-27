@@ -4091,6 +4091,24 @@ class PlayState extends MusicBeatState
 					#end
 				}
 
+					function changeDadCharacter(id:String)
+					{				var olddadx = dad.x;
+									var olddady = dad.y;
+									instance.removeObject(dad);
+									dad = new Character(olddadx, olddady, id);
+									instance.addObject(dad);
+									instance.iconP2.changeIcon(id);
+					}
+				
+					function changeBoyfriendCharacter(id:String)
+					{				var oldboyfriendx = boyfriend.x;
+									var oldboyfriendy = boyfriend.y;
+									instance.removeObject(boyfriend);
+									boyfriend = new Boyfriend(oldboyfriendx, oldboyfriendy, id);
+									instance.addObject(boyfriend);
+									instance.iconP1.changeIcon(id);
+					}
+
 	function noteMiss(direction:Int = 1, daNote:Note):Void
 	{
 		if (!boyfriend.stunned)
