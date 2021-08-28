@@ -978,7 +978,6 @@ class PlayState extends MusicBeatState
 			PlayStateChangeables.botPlay = true;
 		}
 
-	}
 	glitchLayer = new FlxTypedGroup<FlxSprite>();
 	add(glitchLayer);
 	if (!PlayStateChangeables.Optimize)
@@ -1045,6 +1044,7 @@ class PlayState extends MusicBeatState
 		PlayStateChangeables.safeFrames = rep.replay.sf;
 		PlayStateChangeables.botPlay = true;
 	}
+}
 
 	trace('uh ' + PlayStateChangeables.safeFrames);
 
