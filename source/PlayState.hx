@@ -814,8 +814,7 @@ class PlayState extends MusicBeatState
 
 					add(stageCurtains);
 			}
-		}
-		}
+		
 		//defaults if no gf was found in chart
 		var gfCheck:String = 'gf';
 		
