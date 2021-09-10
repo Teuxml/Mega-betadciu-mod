@@ -4078,7 +4078,7 @@ class PlayState extends MusicBeatState
 							controls.N8_R,
 						];
 					}
-				else if (SONG.mania == 6)
+				/*else if (SONG.mania == 6)
 					{
 						holdArray = [controls.P0, controls.P1, controls.P2, controls.P3, controls.P4, controls.P5, controls.P6, controls.P7, controls.P8, controls.P9, controls.P10, controls.P11, controls.P12, controls.P13, controls.P14, controls.P15, controls.P16, controls.P17, controls.P18, controls.P19, controls.P20];
 						pressArray = [
@@ -4129,7 +4129,7 @@ class PlayState extends MusicBeatState
 							controls.P20_R,
 							//controls.P21_R,
 						];
-					}
+					}*/
 				#if windows
 
 				if (luaModchart != null){
@@ -4191,7 +4191,7 @@ class PlayState extends MusicBeatState
 						if (controls.N7_P){luaModchart.executeState('keyPressed',["up"]);};
 						if (controls.N8_P){luaModchart.executeState('keyPressed',["left"]);};
 					}
-				else if (SONG.mania == 6)
+				/*else if (SONG.mania == 6)
 					{
 							if (controls.P0_P){luaModchart.executeState('keyPressed',["left"]);};
 							if (controls.P1_P){luaModchart.executeState('keyPressed',["down"]);};
@@ -4215,7 +4215,7 @@ class PlayState extends MusicBeatState
 							if (controls.P19_P){luaModchart.executeState('keyPressed',["left"]);};
 							if (controls.P20_P){luaModchart.executeState('keyPressed',["left"]);};
 					//		if (controls.P21_P){luaModchart.executeState('keyPressed',["down"]);};
-					}
+					}*/
 
 
 
