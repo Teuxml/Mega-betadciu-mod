@@ -193,7 +193,7 @@ class Note extends FlxSprite
 				setGraphicSize(Std.int(width * PlayState.daPixelZoom * pixelnoteScale));
 				updateHitbox();
 			default:
-				frames = Paths.getSparrowAtlas('noteassets/shaggy/NOTE_assets');
+				frames = Paths.getSparrowAtlas('noteassets/shaggy/NOTE_assets', 'shared');
 				animation.addByPrefix('greenScroll', 'green0');
 				animation.addByPrefix('redScroll', 'red0');
 				animation.addByPrefix('blueScroll', 'blue0');
@@ -203,7 +203,6 @@ class Note extends FlxSprite
 				animation.addByPrefix('violetScroll', 'violet0');
 				animation.addByPrefix('blackScroll', 'black0');
 				animation.addByPrefix('darkScroll', 'dark0');
-
 
 				animation.addByPrefix('purpleholdend', 'pruple end hold');
 				animation.addByPrefix('greenholdend', 'green hold end');

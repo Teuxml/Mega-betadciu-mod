@@ -831,7 +831,7 @@ class PlayState extends MusicBeatState
 
 		switch (SONG.player2)
 		{
-			case 'gf':
+			case 'gf' | 'gf-crucified' | 'gf1' | 'gf2' | 'gf3' | 'gf4' | 'gf5':
 				dad.setPosition(gf.x, gf.y);
 				gf.visible = false;
 				if (isStoryMode)
@@ -839,32 +839,176 @@ class PlayState extends MusicBeatState
 					camPos.x += 600;
 					tweenCamIn();
 				}
-
-			case "spooky":
+			case "spooky" | "gura-amelia" | "sunday":
 				dad.y += 200;
-			case "monster":
+			case "mia" | 'mia-lookstraight' | 'mia-wire':
+				dad.x += 100;
+				dad.y += 150;
+			case 'duet-sm':
+				dad.x += 150;
+				dad.y += 380;
+				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case 'cj-ruby' | 'cj-ruby-both':
+				dad.x -= 50;
+			case 'isa':
+				dad.x += 20;
+				dad.y -= 50;
+				camPos.set(dad.getMidpoint().x + 170, dad.getMidpoint().y - 100);
+			case 'tordbot':
+				dad.x += 330;
+				dad.y -= 1524.75;
+				camPos.set(391.2, -1094.15);
+			case "hex-virus" | "agoti-wire" | 'agoti-glitcher' | 'agoti-mad' | 'haachama':
 				dad.y += 100;
-			case 'monster-christmas':
+			case "rebecca":
+				if (!curStage.contains('hungryhippo'))
+				{	
+					dad.y += 100;
+				}
+				camPos.y += 500;
+				camPos.set(dad.getMidpoint().x + 150, dad.getMidpoint().y + 100);
+			case "whittyCrazy":
+				dad.x -= 25;
+			case "tankman":
+				dad.y += 180;
+			case "sarvente-dark" | 'sarvente' | 'ruv':
+				dad.y -= 70;
+			case 'monster-christmas' | 'monster' | 'drunk-annie' | 'taki':
 				dad.y += 130;
-			case 'dad':
+			case 'dad' | 'shaggy' | 'hd-senpai' | 'lila':
 				camPos.x += 400;
-			case 'pico':
+			case 'dad-mad':
+				dad.x -= 30;
+				dad.y -= 10;
+				camPos.x += 400;
+			case 'bf-blantad':
+				dad.y -= 75;
+			case 'pico' | 'annie-bw' | 'phil' | 'alya' | 'picoCrazy':
 				camPos.x += 600;
 				dad.y += 300;
-			case 'parents-christmas':
+				camPos.set(dad.getMidpoint().x + 150, dad.getMidpoint().y - 100);
+			case 'bob2' | 'peri':
+				dad.y += 50;
+			case 'bosip' | 'demoncass':
+				dad.y -= 50;
+			case 'botan':
+				dad.y += 185;
+				camPos.set(dad.getGraphicMidpoint().x, dad.getMidpoint().y);
+			case 'neko-crazy':
+                dad.x -= 50;
+                dad.y += 230;
+                camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case 'kou' | 'nene' | 'liz' | 'bf-annie' | 'bf-carol':
+				camPos.x += 600;
+				dad.y += 300;
+			case 'bf' | 'bf-frisk' | 'bf-gf':
+				camPos.x += 600;
+				dad.y += 350;
+			case 'parents-christmas' | 'parents-christmas-soft':
 				dad.x -= 500;
-			case 'senpai':
+			case 'bico-christmas':
+				dad.x -= 500;
+				dad.y += 100;
+			case 'senpai' | 'monika' | 'senpai-angry' | 'kristoph-angry' | 'senpai-giddy' | 'baldi-angry ' | 'mangle-angry' | 'monika-angry' | 'green-monika' | 'neon' | 'matt-angry' | 'jackson' | 'mario-angry' | 'colt-angryd2' | 'colt-angryd2corrupted':
 				dad.x += 150;
 				dad.y += 360;
 				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
-			case 'senpai-angry':
-				dad.x += 150;
+			case 'monika-finale':
+				dad.x += 15;
 				dad.y += 360;
 				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
-			case 'spirit':
+			case 'lane-pixel':
+				dad.x += 150;
+				dad.y += 560;
+				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y - 200);
+			case 'bf-gf-pixel' | 'bf-pixel' | 'bf-botan-pixel':
+				dad.x += 150;
+				dad.y += 460;
+				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case 'bf-sky':
+				dad.x -= 100;
+				dad.y += 400;
+				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case 'bf-whitty-pixel':
+				dad.x += 150;
+				dad.y += 400;
+				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case 'gura-amelia-pixel':
+				dad.x += 140;
+				dad.y += 400;
+				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case 'bitdad' | 'bitdadBSide' | 'bitdadcrazy':
+				dad.y += 75;
+				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case 'spirit' | 'spirit-glitchy':
 				dad.x -= 150;
 				dad.y += 100;
+				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y + 200);
+			case 'sky-annoyed':
+				dad.y -= 20;
+			case 'impostor':
+				camPos.y += -200;
+				camPos.x += 400;
+				dad.y += 390;
+				dad.x -= 100;
+			case 'updike':
 				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case 'bob' | 'angrybob':
+				camPos.x += 600;
+				dad.y += 280;	
+			case 'cjClone':
+				dad.x -= 250;
+				dad.y -= 150;			
+				if (SONG.song.toLowerCase() == 'expurgation')
+				{
+					dad.visible = false;
+					gf.x += 300;
+					gf.y -= 25;
+				}			
+			case 'momi':
+				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+				dad.y += 50;
+			case 'rosie' | 'rosie-angry' | 'rosie-furious':
+				dad.y += 100;
+			case 'sh-carol' | 'sarvente-lucifer':
+				dad.x -= 70;
+				dad.y -= 275;
+			case 'garcello' | 'garcellotired' | 'garcellodead':
+				dad.x -= 100;
+			case 'lucian':
+				dad.x -= 30;
+				dad.y -= 60;
+				camPos.x += 300;
+				camPos.y -= 15;
+			case 'abby':
+				dad.x -= 157;
+				dad.y += 202;
+				camPos.x += 300;
+				camPos.y -= 15;
+			case 'abby-mad':
+				dad.x -= 24;
+				dad.y += 260;
+				camPos.x += 300;
+				camPos.y -= 15;
+			case 'roro':
+				dad.x -= 500;
+			case 'zardy':
+				camPos.set(dad.getGraphicMidpoint().x, dad.getGraphicMidpoint().y + 240);
+				dad.x -= 80;
+		}
+
+		if (!curStage.contains('school'))
+		{
+			switch (SONG.player2)
+			{
+				case 'bf-pixel' | 'bf-pixeld4BSide' | 'bf-pixeld4':
+					dad.x += 300;
+					dad.y += 150;
+				case 'senpai' | 'senpai-giddy' | 'senpai-angry' | 'monika' | 'monika-angry':
+					dad.x += 150;
+					dad.y -= 50;
+					camPos.set(dad.getMidpoint().x - 100, dad.getMidpoint().y - 430);
+			}
 		}
 
 
