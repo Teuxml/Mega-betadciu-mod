@@ -61,6 +61,75 @@ enum abstract Action(String) to String from String
 	var D1_R = "d-release";
 	var R2_R = "r2-release";
 
+	var P0 = "p0";
+	var P1 = "p1";
+	var P2 = "p2";
+	var P3 = "p3";
+	var P4 = "p4";
+	var P5 = "p5";
+	var P6 = "p6";
+	var P7 = "p7";
+	var P8 = "p8";
+	var P9 = "p9";
+	var P10 = "p10";
+	var P11 = "p11";
+	var P12 = "p12";
+	var P13 = "p13";
+	var P14 = "p14";
+	var P15 = "p15";
+	var P16 = "p16";
+	var P17 = "p17";
+	var P18 = "p18";
+	var P19 = "p19";
+	var P20 = "p20";
+	//var P21 = "p21";
+
+	var P0_P = "p0-press";
+	var P1_P = "p1-press";
+	var P2_P = "p2-press";
+	var P3_P = "p3-press";
+	var P4_P = "p4-press";
+	var P5_P = "p5-press";
+	var P6_P = "p6-press";
+	var P7_P = "p7-press";
+	var P8_P = "p8-press";
+	var P9_P = "p9-press";
+	var P10_P = "p10-press";
+	var P11_P = "p11-press";
+	var P12_P = "p12-press";
+	var P13_P = "p13-press";
+	var P14_P = "p14-press";
+	var P15_P = "p15-press";
+	var P16_P = "p16-press";
+	var P17_P = "p17-press";
+	var P18_P = "p18-press";
+	var P19_P = "p19-press";
+	var P20_P = "p20-press";
+	//var P21_P = "p21-press";
+
+	var P0_R = "p0-release";
+	var P1_R = "p1-release";
+	var P2_R = "p2-release";
+	var P3_R = "p3-release";
+	var P4_R = "p4-release";
+	var P5_R = "p5-release";
+	var P6_R = "p6-release";
+	var P7_R = "p7-release";
+	var P8_R = "p8-release";
+	var P9_R = "p9-release";
+	var P10_R = "p10-release";
+	var P11_R = "p11-release";
+	var P12_R = "p12-release";
+	var P13_R = "p13-release";
+	var P14_R = "p14-release";
+	var P15_R = "p15-release";
+	var P16_R = "p16-release";
+	var P17_R = "p17-release";
+	var P18_R = "p18-release";
+	var P19_R = "p19-release";
+	var P20_R = "p20-release";
+	//var P21_R = "p21-release";
+
 
 	var N0 = "n0";
 	var N1 = "n1";
@@ -137,6 +206,73 @@ abstract Action(String) to String from String
 	var D1_R = "d-release";
 	var R2_R = "r2-release";
 
+	var P0 = "p0";
+	var P1 = "p1";
+	var P2 = "p2";
+	var P3 = "p3";
+	var P4 = "p4";
+	var P5 = "p5";
+	var P6 = "p6";
+	var P7 = "p7";
+	var P8 = "p8";
+	var P9 = "p9";
+	var P10 = "p10";
+	var P11 = "p11";
+	var P12 = "p12";
+	var P13 = "p13";
+	var P14 = "p14";
+	var P15 = "p15";
+	var P16 = "p16";
+	var P17 = "p17";
+	var P18 = "p18";
+	var P19 = "p19";
+	var P20 = "p20";
+//	var P21 = "p21";
+
+	var P0_P = "p0-press";
+	var P1_P = "p1-press";
+	var P2_P = "p2-press";
+	var P3_P = "p3-press";
+	var P4_P = "p4-press";
+	var P5_P = "p5-press";
+	var P6_P = "p6-press";
+	var P7_P = "p7-press";
+	var P8_P = "p8-press";
+	var P9_P = "p9-press";
+	var P10_P = "p10-press";
+	var P11_P = "p11-press";
+	var P12_P = "p12-press";
+	var P13_P = "p13-press";
+	var P14_P = "p14-press";
+	var P15_P = "p15-press";
+	var P16_P = "p16-press";
+	var P17_P = "p17-press";
+	var P18_P = "p18-press";
+	var P19_P = "p19-press";
+	var P20_P = "p20-press";
+	//var P21_P = "p21-press";
+
+	var P0_R = "p0-release";
+	var P1_R = "p2-release";
+	var P3_R = "p4-release";
+	var P5_R = "p5-release";
+	var P6_R = "p6-release";
+	var P7_R = "p7-release";
+	var P8_R = "p8-release";
+	var P9_R = "p9-release";
+	var P10_R = "p10-release";
+	var P11_R = "p11-release";
+	var P12_R = "p12-release";
+	var P13_R = "p13-release";
+	var P14_R = "p14-release";
+	var P15_R = "p15-release";
+	var P16_R = "p16-release";
+	var P17_R = "p17-release";
+	var P18_R = "p18-release";
+	var P19_R = "p19-release";
+	var P20_R = "p20-release";
+	//var P21_R = "p21-release";
+
 
 	var N0 = "n0";
 	var N1 = "n1";
@@ -208,6 +344,28 @@ enum Control
 	N6;
 	N7;
 	N8;
+	P0;
+	P1;
+	P2;
+	P3;
+	P4;
+	P5;
+	P6;
+	P7;
+	P8;
+	P9;
+	P10;
+	P11;
+	P12;
+	P13;
+	P14;
+	P15;
+	P16;
+	P17;
+	P18;
+	P19;
+	P20;
+	//P21;
 }
 
 enum KeyboardScheme
@@ -269,6 +427,74 @@ class Controls extends FlxActionSet
 	var _r2P = new FlxActionDigital(Action.R2_P);
 	var _r2R = new FlxActionDigital(Action.R2_R);
 
+	var _p0 = new FlxActionDigital(Action.P0);
+	var _p1 = new FlxActionDigital(Action.P1);
+	var _p2 = new FlxActionDigital(Action.P2);
+	var _p3 = new FlxActionDigital(Action.P3);
+	var _p4 = new FlxActionDigital(Action.P4);
+	var _p5 = new FlxActionDigital(Action.P5);
+	var _p6 = new FlxActionDigital(Action.P6);
+	var _p7 = new FlxActionDigital(Action.P7);
+	var _p8 = new FlxActionDigital(Action.P8);
+	var _p9 = new FlxActionDigital(Action.P9);
+	var _p10 = new FlxActionDigital(Action.P10);
+	var _p11 = new FlxActionDigital(Action.P11);
+	var _p12 = new FlxActionDigital(Action.P12);
+	var _p13 = new FlxActionDigital(Action.P13);
+	var _p14 = new FlxActionDigital(Action.P14);
+	var _p15 = new FlxActionDigital(Action.P15);
+	var _p16 = new FlxActionDigital(Action.P16);
+	var _p17 = new FlxActionDigital(Action.P17);
+	var _p18 = new FlxActionDigital(Action.P18);
+	var _p19 = new FlxActionDigital(Action.P19);
+	var _p20 = new FlxActionDigital(Action.P20);
+	//var _p21 = new FlxActionDigital(Action.P21);
+
+	var _p0P = new FlxActionDigital(Action.P0_P);
+	var _p1P = new FlxActionDigital(Action.P1_P);
+	var _p2P = new FlxActionDigital(Action.P2_P);
+	var _p3P = new FlxActionDigital(Action.P3_P);
+	var _p4P = new FlxActionDigital(Action.P4_P);
+	var _p5P = new FlxActionDigital(Action.P5_P);
+	var _p6P = new FlxActionDigital(Action.P6_P);
+	var _p7P = new FlxActionDigital(Action.P7_P);
+	var _p8P = new FlxActionDigital(Action.P8_P);
+	var _p9P = new FlxActionDigital(Action.P9_P);
+	var _p10P = new FlxActionDigital(Action.P10_P);
+	var _p11P = new FlxActionDigital(Action.P11_P);
+	var _p12P = new FlxActionDigital(Action.P12_P);
+	var _p13P = new FlxActionDigital(Action.P13_P);
+	var _p14P = new FlxActionDigital(Action.P14_P);
+	var _p15P = new FlxActionDigital(Action.P15_P);
+	var _p16P = new FlxActionDigital(Action.P16_P);
+	var _p17P = new FlxActionDigital(Action.P17_P);
+	var _p18P = new FlxActionDigital(Action.P18_P);
+	var _p19P = new FlxActionDigital(Action.P19_P);
+	var _p20P = new FlxActionDigital(Action.P20_P);
+	//var _p21P = new FlxActionDigital(Action.P21_P);
+
+	var _p0R = new FlxActionDigital(Action.P0_R);
+	var _p1R = new FlxActionDigital(Action.P1_R);
+	var _p2R = new FlxActionDigital(Action.P2_R);
+	var _p3R = new FlxActionDigital(Action.P3_R);
+	var _p4R = new FlxActionDigital(Action.P4_R);
+	var _p5R = new FlxActionDigital(Action.P5_R);
+	var _p6R = new FlxActionDigital(Action.P6_R);
+	var _p7R = new FlxActionDigital(Action.P7_R);
+	var _p8R = new FlxActionDigital(Action.P8_R);
+	var _p9R = new FlxActionDigital(Action.P9_R);
+	var _p10R = new FlxActionDigital(Action.P10_R);
+	var _p11R = new FlxActionDigital(Action.P11_R);
+	var _p12R = new FlxActionDigital(Action.P12_R);
+	var _p13R = new FlxActionDigital(Action.P13_R);
+	var _p14R = new FlxActionDigital(Action.P14_R);
+	var _p15R = new FlxActionDigital(Action.P15_R);
+	var _p16R = new FlxActionDigital(Action.P16_R);
+	var _p17R = new FlxActionDigital(Action.P17_R);
+	var _p18R = new FlxActionDigital(Action.P18_R);
+	var _p19R = new FlxActionDigital(Action.P19_R);
+	var _p20R = new FlxActionDigital(Action.P20_R);
+	//var _p21R = new FlxActionDigital(Action.P21_R);
 
 	var _n0 = new FlxActionDigital(Action.N0);
 	var _n1 = new FlxActionDigital(Action.N1);
@@ -518,6 +744,76 @@ class Controls extends FlxActionSet
 	public var N7_R(get, never):Bool;
 	public var N8_R(get, never):Bool;
 
+	
+	public var P0(get, never):Bool;
+	public var P1(get, never):Bool;
+	public var P2(get, never):Bool;
+	public var P3(get, never):Bool;
+	public var P4(get, never):Bool;
+	public var P5(get, never):Bool;
+	public var P6(get, never):Bool;
+	public var P7(get, never):Bool;
+	public var P8(get, never):Bool;
+	public var P9(get, never):Bool;
+	public var P10(get, never):Bool;
+	public var P11(get, never):Bool;
+	public var P12(get, never):Bool;
+	public var P13(get, never):Bool;
+	public var P14(get, never):Bool;
+	public var P15(get, never):Bool;
+	public var P16(get, never):Bool;
+	public var P17(get, never):Bool;
+	public var P18(get, never):Bool;
+	public var P19(get, never):Bool;
+	public var P20(get, never):Bool;
+	//public var P21(get, never):Bool;
+
+	public var P0_P(get, never):Bool;
+	public var P1_P(get, never):Bool;
+	public var P2_P(get, never):Bool;
+	public var P3_P(get, never):Bool;
+	public var P4_P(get, never):Bool;
+	public var P5_P(get, never):Bool;
+	public var P6_P(get, never):Bool;
+	public var P7_P(get, never):Bool;
+	public var P8_P(get, never):Bool;
+	public var P9_P(get, never):Bool;
+	public var P10_P(get, never):Bool;
+	public var P11_P(get, never):Bool;
+	public var P12_P(get, never):Bool;
+	public var P13_P(get, never):Bool;
+	public var P14_P(get, never):Bool;
+	public var P15_P(get, never):Bool;
+	public var P16_P(get, never):Bool;
+	public var P17_P(get, never):Bool;
+	public var P18_P(get, never):Bool;
+	public var P19_P(get, never):Bool;
+	public var P20_P(get, never):Bool;
+	//public var P21_P(get, never):Bool;
+
+	public var P0_R(get, never):Bool;
+	public var P1_R(get, never):Bool;
+	public var P2_R(get, never):Bool;
+	public var P3_R(get, never):Bool;
+	public var P4_R(get, never):Bool;
+	public var P5_R(get, never):Bool;
+	public var P6_R(get, never):Bool;
+	public var P7_R(get, never):Bool;
+	public var P8_R(get, never):Bool;
+	public var P9_R(get, never):Bool;
+	public var P10_R(get, never):Bool;
+	public var P11_R(get, never):Bool;
+	public var P12_R(get, never):Bool;
+	public var P13_R(get, never):Bool;
+	public var P14_R(get, never):Bool;
+	public var P15_R(get, never):Bool;
+	public var P16_R(get, never):Bool;
+	public var P17_R(get, never):Bool;
+	public var P18_R(get, never):Bool;
+	public var P19_R(get, never):Bool;
+	public var P20_R(get, never):Bool;
+	//public var P21_R(get, never):Bool;
+
 	inline function get_N0() return _n0.check();
 	inline function get_N1() return _n1.check();
 	inline function get_N2() return _n2.check();
@@ -547,6 +843,75 @@ class Controls extends FlxActionSet
 	inline function get_N6_R() return _n6R.check();
 	inline function get_N7_R() return _n7R.check();
 	inline function get_N8_R() return _n8R.check();
+
+	inline function get_P0() return _p0.check();
+	inline function get_P1() return _p1.check();
+	inline function get_P2() return _p2.check();
+	inline function get_P3() return _p3.check();
+	inline function get_P4() return _p4.check();
+	inline function get_P5() return _p5.check();
+	inline function get_P6() return _p6.check();
+	inline function get_P7() return _p7.check();
+	inline function get_P8() return _p8.check();
+	inline function get_P9() return _p9.check();
+	inline function get_P10() return _p10.check();
+	inline function get_P11() return _p11.check();
+	inline function get_P12() return _p12.check();
+	inline function get_P13() return _p13.check();
+	inline function get_P14() return _p14.check();
+	inline function get_P15() return _p15.check();
+	inline function get_P16() return _p16.check();
+	inline function get_P17() return _p17.check();
+	inline function get_P18() return _p18.check();
+	inline function get_P19() return _p19.check();
+	inline function get_P20() return _p20.check();
+	//inline function get_P21() return _p21.check();
+
+	inline function get_P0_P() return _p0P.check();
+	inline function get_P1_P() return _p1P.check();
+	inline function get_P2_P() return _p2P.check();
+	inline function get_P3_P() return _p3P.check();
+	inline function get_P4_P() return _p4P.check();
+	inline function get_P5_P() return _p5P.check();
+	inline function get_P6_P() return _p6P.check();
+	inline function get_P7_P() return _p7P.check();
+	inline function get_P8_P() return _p8P.check();
+	inline function get_P9_P() return _p9P.check();
+	inline function get_P10_P() return _p10P.check();
+	inline function get_P11_P() return _p11P.check();
+	inline function get_P12_P() return _p12P.check();
+	inline function get_P13_P() return _p13P.check();
+	inline function get_P14_P() return _p14P.check();
+	inline function get_P15_P() return _p15P.check();
+	inline function get_P16_P() return _p16P.check();
+	inline function get_P17_P() return _p17P.check();
+	inline function get_P18_P() return _p18P.check();
+	inline function get_P19_P() return _p19P.check();
+	inline function get_P20_P() return _p20P.check();
+	//inline function get_P21_P() return _p21P.check();
+
+	inline function get_P0_R() return _p0R.check();
+	inline function get_P1_R() return _p1R.check();
+	inline function get_P2_R() return _p2R.check();
+	inline function get_P3_R() return _p3R.check();
+	inline function get_P4_R() return _p4R.check();
+	inline function get_P5_R() return _p5R.check();
+	inline function get_P6_R() return _p6R.check();
+	inline function get_P7_R() return _p7R.check();
+	inline function get_P8_R() return _p8R.check();
+	inline function get_P9_R() return _p9R.check();
+	inline function get_P10_R() return _p10R.check();
+	inline function get_P11_R() return _p11R.check();
+	inline function get_P12_R() return _p12R.check();
+	inline function get_P13_R() return _p13R.check();
+	inline function get_P14_R() return _p14R.check();
+	inline function get_P15_R() return _p15R.check();
+	inline function get_P16_R() return _p16R.check();
+	inline function get_P17_R() return _p17R.check();
+	inline function get_P18_R() return _p18R.check();
+	inline function get_P19_R() return _p19R.check();
+	inline function get_P20_R() return _p20R.check();
+	//inline function get_P21_R() return _p21R.check();
 
 	#if (haxe >= "4.0.0")
 	public function new(name, scheme = None)
@@ -623,6 +988,76 @@ class Controls extends FlxActionSet
 		add(_n6R);
 		add(_n7R);
 		add(_n8R);
+
+		add(_p0);
+		add(_p1);
+		add(_p2);
+		add(_p3);
+		add(_p4);
+		add(_p5);
+		add(_p6);
+		add(_p7);
+		add(_p8);
+		add(_p9);
+		add(_p10);
+		add(_p11);
+		add(_p12);
+		add(_p13);
+		add(_p14);
+		add(_p15);
+		add(_p16);
+		add(_p17);
+		add(_p18);
+		add(_p19);
+		add(_p20);
+		//add(_p21);
+
+		add(_p0P);
+		add(_p1P);
+		add(_p2P);
+		add(_p3P);
+		add(_p4P);
+		add(_p5P);
+		add(_p6P);
+		add(_p7P);
+		add(_p8P);
+		add(_p9P);
+		add(_p10P);
+		add(_p11P);
+		add(_p12P);
+		add(_p13P);
+		add(_p14P);
+		add(_p15P);
+		add(_p16P);
+		add(_p17P);
+		add(_p18P);
+		add(_p19P);
+		add(_p20P);
+		//add(_p21P);
+
+		add(_p0R);
+		add(_p1R);
+		add(_p2R);
+		add(_p3R);
+		add(_p4R);
+		add(_p5R);
+		add(_p6R);
+		add(_p7R);
+		add(_p8R);
+		add(_p9R);
+		add(_p10R);
+		add(_p11R);
+		add(_p12R);
+		add(_p13R);
+		add(_p14R);
+		add(_p15R);
+		add(_p16R);
+		add(_p17R);
+		add(_p18R);
+		add(_p19R);
+		add(_p20R);
+		//add(_p21R);
+
 
 		for (action in digitalActions)
 			byName[action.name] = action;
@@ -705,6 +1140,75 @@ class Controls extends FlxActionSet
 		add(_n7R);
 		add(_n8R);
 
+		add(_p0);
+		add(_p1);
+		add(_p2);
+		add(_p3);
+		add(_p4);
+		add(_p5);
+		add(_p6);
+		add(_p7);
+		add(_p8);
+		add(_p9);
+		add(_p10);
+		add(_p11);
+		add(_p12);
+		add(_p13);
+		add(_p14);
+		add(_p15);
+		add(_p16);
+		add(_p17);
+		add(_p18);
+		add(_p19);
+		add(_p20);
+//		add(_p21);
+
+		add(_p0P);
+		add(_p1P);
+		add(_p2P);
+		add(_p3P);
+		add(_p4P);
+		add(_p5P);
+		add(_p6P);
+		add(_p7P);
+		add(_p8P);
+		add(_p9P);
+		add(_p10P);
+		add(_p11P);
+		add(_p12P);
+		add(_p13P);
+		add(_p14P);
+		add(_p15P);
+		add(_p16P);
+		add(_p17P);
+		add(_p18P);
+		add(_p19P);
+		add(_p20P);
+	//	add(_p21P);
+
+		add(_p0R);
+		add(_p1R);
+		add(_p2R);
+		add(_p3R);
+		add(_p4R);
+		add(_p5R);
+		add(_p6R);
+		add(_p7R);
+		add(_p8R);
+		add(_p9R);
+		add(_p10R);
+		add(_p11R);
+		add(_p12R);
+		add(_p13R);
+		add(_p14R);
+		add(_p15R);
+		add(_p16R);
+		add(_p17R);
+		add(_p18R);
+		add(_p19R);
+		add(_p20R);
+	//	add(_p21R);
+
 
 		for (action in digitalActions)
 			byName[action.name] = action;
@@ -779,6 +1283,29 @@ class Controls extends FlxActionSet
 			case N6: _n6;
 			case N7: _n7;
 			case N8: _n8;
+			
+			case P0: _p0;
+			case P1: _p1;
+			case P2: _p2;
+			case P3: _p3;
+			case P4: _p4;
+			case P5: _p5;
+			case P6: _p6;
+			case P7: _p7;
+			case P8: _p8;
+			case P9: _p9;
+			case P10: _p10;
+			case P11: _p11;
+			case P12: _p12;
+			case P13: _p13;
+			case P14: _p14;
+			case P15: _p15;
+			case P16: _p16;
+			case P17: _p17;
+			case P18: _p18;
+			case P19: _p19;
+			case P20: _p20;
+		//	case P21: _p21;
 		}
 	}
 
@@ -888,6 +1415,95 @@ class Controls extends FlxActionSet
 				func(_n8, PRESSED);
 				func(_n8P, JUST_PRESSED);
 				func(_n8R, JUST_RELEASED);
+
+			case P0:
+				func(_p0, PRESSED);
+				func(_p0P, JUST_PRESSED);
+				func(_p0R, JUST_RELEASED);
+			case P1:
+				func(_p1, PRESSED);
+				func(_p1P, JUST_PRESSED);
+				func(_p1R, JUST_RELEASED);
+			case P2:
+				func(_p2, PRESSED);
+				func(_p2P, JUST_PRESSED);
+				func(_p2R, JUST_RELEASED);
+			case P3:
+				func(_p3, PRESSED);
+				func(_p3P, JUST_PRESSED);
+				func(_p3R, JUST_RELEASED);
+			case P4:
+				func(_p4, PRESSED);
+				func(_p4P, JUST_PRESSED);
+				func(_p4R, JUST_RELEASED);
+			case P5:
+				func(_p5, PRESSED);
+				func(_p5P, JUST_PRESSED);
+				func(_p5R, JUST_RELEASED);
+			case P6:
+				func(_p6, PRESSED);
+				func(_p6P, JUST_PRESSED);
+				func(_p6R, JUST_RELEASED);
+			case P7:
+				func(_p7, PRESSED);
+				func(_p7P, JUST_PRESSED);
+				func(_p7R, JUST_RELEASED);
+			case P8:
+				func(_p8, PRESSED);
+				func(_p8P, JUST_PRESSED);
+				func(_p8R, JUST_RELEASED);
+			case P9:
+				func(_p9, PRESSED);
+				func(_p9P, JUST_PRESSED);
+				func(_p9R, JUST_RELEASED);
+				case P10:
+					func(_p10, PRESSED);
+					func(_p10P, JUST_PRESSED);
+					func(_p10R, JUST_RELEASED);
+				case P11:
+					func(_p11, PRESSED);
+					func(_p11P, JUST_PRESSED);
+					func(_p11R, JUST_RELEASED);
+				case P12:
+					func(_p12, PRESSED);
+					func(_p12P, JUST_PRESSED);
+					func(_p12R, JUST_RELEASED);
+				case P13:
+					func(_p13, PRESSED);
+					func(_p13P, JUST_PRESSED);
+					func(_p13R, JUST_RELEASED);
+				case P14:
+					func(_p14, PRESSED);
+					func(_p14P, JUST_PRESSED);
+					func(_p14R, JUST_RELEASED);
+				case P15:
+					func(_p15, PRESSED);
+					func(_p15P, JUST_PRESSED);
+					func(_p15R, JUST_RELEASED);
+				case P16:
+					func(_p16, PRESSED);
+					func(_p16P, JUST_PRESSED);
+					func(_p16R, JUST_RELEASED);
+				case P17:
+					func(_p17, PRESSED);
+					func(_p17P, JUST_PRESSED);
+					func(_p17R, JUST_RELEASED);
+				case P18:
+					func(_p18, PRESSED);
+					func(_p18P, JUST_PRESSED);
+					func(_p18R, JUST_RELEASED);
+				case P19:
+					func(_p19, PRESSED);
+					func(_p19P, JUST_PRESSED);
+					func(_p19R, JUST_RELEASED);
+					case P20:
+						func(_p20, PRESSED);
+						func(_p20P, JUST_PRESSED);
+						func(_p20R, JUST_RELEASED);
+					//case P21:
+					//	func(_p21, PRESSED);
+					//	func(_p21P, JUST_PRESSED);
+					//	func(_p21R, JUST_RELEASED);
 		}
 	}
 
@@ -1033,9 +1649,31 @@ class Controls extends FlxActionSet
 		bindKeys(Control.N5, [H]);
 		bindKeys(Control.N6, [J]);
 		bindKeys(Control.N7, [K]);
-		bindKeys(Control.N8, [L]);
+		bindKeys(Control.N8, [L]);*/
 
-		bindKeys(Control.L1, [S]);
+		bindKeys(Control.P0, [Q]);
+		bindKeys(Control.P1, [W]);
+		bindKeys(Control.P2, [A]);
+		bindKeys(Control.P3, [S]);
+		bindKeys(Control.P4, [E]);
+		bindKeys(Control.P5, [R]);
+		bindKeys(Control.P6, [C]);
+		bindKeys(Control.P7, [V]);
+		bindKeys(Control.P8, [D]);
+		bindKeys(Control.P9, [F]);
+		bindKeys(Control.P10, [FlxKey.SPACE]);
+		bindKeys(Control.P11, [M]);
+		bindKeys(Control.P12, [H]);
+		bindKeys(Control.P13, [J]);
+		bindKeys(Control.P14, [N]);
+		bindKeys(Control.P15, [U]);
+		bindKeys(Control.P16, [I]);
+		bindKeys(Control.P17, [O]);
+		bindKeys(Control.P18, [P]);
+		bindKeys(Control.P19, [K]);
+		bindKeys(Control.P20, [L]);
+
+		/*bindKeys(Control.L1, [S]);
 		bindKeys(Control.U1, [D]);
 		bindKeys(Control.R1, [F]);
 		bindKeys(Control.L2, [J]);
@@ -1142,12 +1780,57 @@ class Controls extends FlxActionSet
 		inline bindKeys(Control.N7, [FlxKey.fromString(FlxG.save.data.N7Bind)]);
 		inline bindKeys(Control.N8, [FlxKey.fromString(FlxG.save.data.N8Bind)]);
 
+		inline bindKeys(Control.P0, [FlxKey.fromString(FlxG.save.data.P0Bind)]);
+		inline bindKeys(Control.P1, [FlxKey.fromString(FlxG.save.data.P1Bind)]);
+		inline bindKeys(Control.P2, [FlxKey.fromString(FlxG.save.data.P2Bind)]);
+		inline bindKeys(Control.P3, [FlxKey.fromString(FlxG.save.data.P3Bind)]);
+		inline bindKeys(Control.P4, [FlxKey.fromString(FlxG.save.data.P4Bind)]);
+		inline bindKeys(Control.P5, [FlxKey.fromString(FlxG.save.data.P5Bind)]);
+		inline bindKeys(Control.P6, [FlxKey.fromString(FlxG.save.data.P6Bind)]);
+		inline bindKeys(Control.P7, [FlxKey.fromString(FlxG.save.data.P7Bind)]);
+		inline bindKeys(Control.P8, [FlxKey.fromString(FlxG.save.data.P8Bind)]);
+		inline bindKeys(Control.P9, [FlxKey.fromString(FlxG.save.data.P9Bind)]);
+		inline bindKeys(Control.P10, [FlxKey.fromString(FlxG.save.data.P10Bind)]);
+		inline bindKeys(Control.P11, [FlxKey.fromString(FlxG.save.data.P11Bind)]);
+		inline bindKeys(Control.P12, [FlxKey.fromString(FlxG.save.data.P12Bind)]);
+		inline bindKeys(Control.P13, [FlxKey.fromString(FlxG.save.data.P13Bind)]);
+		inline bindKeys(Control.P14, [FlxKey.fromString(FlxG.save.data.P14Bind)]);
+		inline bindKeys(Control.P15, [FlxKey.fromString(FlxG.save.data.P15Bind)]);
+		inline bindKeys(Control.P16, [FlxKey.fromString(FlxG.save.data.P16Bind)]);
+		inline bindKeys(Control.P17, [FlxKey.fromString(FlxG.save.data.P17Bind)]);
+		inline bindKeys(Control.P18, [FlxKey.fromString(FlxG.save.data.P18Bind)]);
+		inline bindKeys(Control.P19, [FlxKey.fromString(FlxG.save.data.P19Bind)]);
+		inline bindKeys(Control.P20, [FlxKey.fromString(FlxG.save.data.P20Bind)]);
+		//inline bindKeys(Control.P21, [FlxKey.fromString(FlxG.save.data.P21Bind)]);
+
 		inline bindKeys(Control.L1, [FlxKey.fromString(FlxG.save.data.L1Bind)]);
 		inline bindKeys(Control.U1, [FlxKey.fromString(FlxG.save.data.U1Bind)]);
 		inline bindKeys(Control.R1, [FlxKey.fromString(FlxG.save.data.R1Bind)]);
 		inline bindKeys(Control.L2, [FlxKey.fromString(FlxG.save.data.L2Bind)]);
 		inline bindKeys(Control.D1, [FlxKey.fromString(FlxG.save.data.D1Bind)]);
 		inline bindKeys(Control.R2, [FlxKey.fromString(FlxG.save.data.R2Bind)]);
+
+		bindKeys(Control.P0, [Q]);
+		bindKeys(Control.P1, [W]);
+		bindKeys(Control.P2, [A]);
+		bindKeys(Control.P3, [S]);
+		bindKeys(Control.P4, [E]);
+		bindKeys(Control.P5, [R]);
+		bindKeys(Control.P6, [C]);
+		bindKeys(Control.P7, [V]);
+		bindKeys(Control.P8, [D]);
+		bindKeys(Control.P9, [F]);
+		bindKeys(Control.P10, [FlxKey.SPACE]);
+		bindKeys(Control.P11, [M]);
+		bindKeys(Control.P12, [H]);
+		bindKeys(Control.P13, [J]);
+		bindKeys(Control.P14, [N]);
+		bindKeys(Control.P15, [U]);
+		bindKeys(Control.P16, [I]);
+		bindKeys(Control.P17, [O]);
+		bindKeys(Control.P18, [P]);
+		bindKeys(Control.P19, [K]);
+		bindKeys(Control.P20, [L]);
 	}
 
 	function removeKeyboard()

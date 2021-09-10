@@ -1,6 +1,6 @@
 {
  "song": {
-  "player1": "bf-mii",
+  "player1": "bf",
   "notes": [
    {
     "endTime": 1920,
@@ -26373,8 +26373,8 @@
     "mustHitSection": true
    }
   ],
-  "player2": "eteled2",
-  "gfVersion": "gf-mii",
+  "player2": "dad",
+  "gfVersion": "gf",
   "chartVersion": "2",
   "eventObjects": [
    {
@@ -26386,7 +26386,7 @@
   ],
   "song": "System-Failure",
   "needsVoices": true,
-  "stage": "mii-channel-dark",
+  "stage": "stage",
   "validScore": true,
   "sections": 45,
   "speed": 2.5,
