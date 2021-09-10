@@ -126,13 +126,13 @@ class PlayState extends MusicBeatState
 	//	 MULTIPLE CHARACTERS SHIT, IDEK IF THIS WILL WORK BUT 
 	//   GOTTA HOPE LMAO	
 
-	var dad2:Character;
-	var dad3:Character;
-	var dad4:Character;
+	public static var dad2:Character;
+	public static var dad3:Character;
+	public static var dad4:Character;
 
-	var boyfriend2:Character;
-	var boyfriend3:Character;
-	var boyfriend4:Character;
+	public static var bf2:Character;
+	public static var bf3:Character;
+	public static var bf4:Character;
 
 	var isdad:Bool = false;
 	var isdad2:Bool = false;
@@ -980,8 +980,14 @@ class PlayState extends MusicBeatState
 	var isbf2:Bool = false;
 	var isbf3:Bool = false;
 	var isbf4:Bool = false;
-*/
-			if (dad2 == true)
+	*/
+			if (curSong == 'South')
+			{
+				add(dad2);
+				add(bf2);
+			}
+
+			/*if (dad2 == true)
 				add(dad2);
 			if (dad3 == true)
 				add(dad3);
@@ -993,7 +999,7 @@ class PlayState extends MusicBeatState
 			if (bf3 == true)
 				add(bf3);
 			if (bf4 == true)
-				add(bf4);
+				add(bf4);*/
 
 			add(dad);
 			add(boyfriend);
@@ -4696,7 +4702,7 @@ class PlayState extends MusicBeatState
 							bf2.playAnim('sing' + sDir[note.noteData], true);
 							bf2.holdTimer = 0;
 						}
-						if (isdbf3 == true)
+						if (isbf3 == true)
 						{
 							bf3.playAnim('sing' + sDir[note.noteData], true);
 							bf3.holdTimer = 0;

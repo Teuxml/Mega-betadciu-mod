@@ -223,9 +223,6 @@ class ModchartState
 			case 'dad':
                 @:privateAccess
 				return PlayState.dad;
-			case 'blantadBG':
-                @:privateAccess
-				return PlayState.blantadBG;
 		}
 		// lua objects or what ever
 		if (luaSprites.get(id) == null)
@@ -344,31 +341,31 @@ class ModchartState
 		}
 		function changeBoyfriend2CharacterBetter(x:Float, y:Float, id:String)
 			{		
-							PlayState.instance.removeObject(PlayState.boyfriend2);
+							PlayState.instance.removeObject(PlayState.bf2);
 							//PlayState.boyfriend = new Character(x, y, null);
-							PlayState.instance.destroyObject(PlayState.boyfriend2);
-							PlayState.boyfriend2 = new Character(x, y, id);
-							PlayState.instance.addObject(PlayState.boyfriend2);
+							PlayState.instance.destroyObject(PlayState.bf2);
+							PlayState.bf2 = new Character(x, y, id);
+							PlayState.instance.addObject(PlayState.bf2);
 							PlayState.instance.iconP2.animation.play(id);
 			}
 		
 		function changeBoyfriend3CharacterBetter(x:Float, y:Float, id:String)
 			{		
-							PlayState.instance.removeObject(PlayState.boyfriend3);
+							PlayState.instance.removeObject(PlayState.bf3);
 							//PlayState.boyfriend = new Character(x, y, null);
-							PlayState.instance.destroyObject(PlayState.boyfriend3);
-							PlayState.boyfriend3 = new Character(x, y, id);
-							PlayState.instance.addObject(PlayState.boyfriend3);
+							PlayState.instance.destroyObject(PlayState.bf3);
+							PlayState.bf3 = new Character(x, y, id);
+							PlayState.instance.addObject(PlayState.bf3);
 							PlayState.instance.iconP2.animation.play(id);
 			}
 		
 		function changeBoyfriend4CharacterBetter(x:Float, y:Float, id:String)
 			{		
-							PlayState.instance.removeObject(PlayState.boyfriend4);
+							PlayState.instance.removeObject(PlayState.bf4);
 							//PlayState.boyfriend = new Character(x, y, null);
-							PlayState.instance.destroyObject(PlayState.boyfriend4);
-							PlayState.boyfriend4 = new Character(x, y, id);
-							PlayState.instance.addObject(PlayState.boyfriend4);
+							PlayState.instance.destroyObject(PlayState.bf4);
+							PlayState.bf4 = new Character(x, y, id);
+							PlayState.instance.addObject(PlayState.bf4);
 							PlayState.instance.iconP2.animation.play(id);
 			}
 
@@ -715,7 +712,7 @@ class ModchartState
 				});
 	
 				Lua_helper.add_callback(lua,"setDefaultCamZoom", function(zoomAmount:Float) {
-					PlayState.defaultCamZoom = zoomAmount;
+		//			PlayState.defaultCamZoom = zoomAmount;
 				});
 
 				Lua_helper.add_callback(lua,"setHudZoom", function(zoomAmount:Float) {
@@ -723,33 +720,33 @@ class ModchartState
 				});
 
 				Lua_helper.add_callback(lua,"setCamFollow", function(x:Float, y:Float) {
-					PlayState.camFollowIsOn = false;
-					PlayState.camFollow.setPosition(x, y);
+			//		PlayState.camFollowIsOn = false;
+			//		PlayState.camFollow.setPosition(x, y);
 				});
 
 				Lua_helper.add_callback(lua,"setDelayedCamFollow", function(time:Float,x:Float, y:Float) {
-					PlayState.camFollowIsOn = false;
+				//	PlayState.camFollowIsOn = false;
 
 					new FlxTimer().start(time, function(tmr:FlxTimer)
 					{
-						PlayState.camFollow.setPosition(x, y);
+				//		PlayState.camFollow.setPosition(x, y);
 					});	
 				});
 
 				Lua_helper.add_callback(lua,"offCamFollow", function(id:String) {
 					//The string does absolutely nothing
-					PlayState.camFollowIsOn = false;
+			//		PlayState.camFollowIsOn = false;
 				});
 
 				Lua_helper.add_callback(lua,"resetCamFollow", function(id:String) {
 					//The string does absolutely nothing
-					PlayState.camFollowIsOn = true;
+			//		PlayState.camFollowIsOn = true;
 				});
 
 				Lua_helper.add_callback(lua,"snapCam", function(x:Float, y:Float) {
 					//The string does absolutely nothing
-					PlayState.camFollowIsOn = false;
-					PlayState.defaultCamFollow = false;
+			//		PlayState.camFollowIsOn = false;
+				//	PlayState.defaultCamFollow = false;
 					{
 						var camPosition:FlxObject;
 						camPosition = new FlxObject(0, 0, 1, 1);
@@ -760,12 +757,12 @@ class ModchartState
 
 				Lua_helper.add_callback(lua,"resetSnapCam", function(id:String) {
 					//The string does absolutely nothing
-					PlayState.defaultCamFollow = true;
+		//			PlayState.defaultCamFollow = true;
 				});
 				
 				Lua_helper.add_callback(lua,"resetCamEffects", function(id:String) {
-					PlayState.defaultCamFollow = true;
-					PlayState.camFollowIsOn = true;
+			//		PlayState.defaultCamFollow = true;
+				//	PlayState.camFollowIsOn = true;
 				});
 
 				// strumline
@@ -942,7 +939,7 @@ class ModchartState
 				});
 
 				Lua_helper.add_callback(lua,"stopGFDance", function(stop:Bool) {
-					PlayState.picoCutscene = stop;
+	//				PlayState.picoCutscene = stop;
 				});
 	
 				Lua_helper.add_callback(lua, "setActorFlipX", function(flip:Bool, id:String)
