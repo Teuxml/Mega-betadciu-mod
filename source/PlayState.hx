@@ -260,6 +260,8 @@ class PlayState extends MusicBeatState
 	
 	public function addObject(object:FlxBasic) { add(object); }
 	public function removeObject(object:FlxBasic) { remove(object); }
+	public function destroyObject(object:FlxBasic) { object.destroy(); }
+
 
 
 	override public function create()

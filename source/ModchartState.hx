@@ -335,7 +335,7 @@ class ModchartState
 						PlayState.instance.removeObject(PlayState.boyfriend);
 						//PlayState.boyfriend = new Character(x, y, null);
 						PlayState.instance.destroyObject(PlayState.boyfriend);
-						PlayState.boyfriend = new Character(x, y, id);
+						PlayState.boyfriend = new Boyfriend(x, y, id);
 						PlayState.instance.addObject(PlayState.boyfriend);
 						PlayState.instance.iconP2.animation.play(id);
 		}
