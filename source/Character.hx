@@ -4552,23 +4552,6 @@ class Character extends FlxSprite
 				addOffset("singDOWN", 0, -30);
 
 				playAnim('idle');
-			case 'whittyCrazy':
-				// DAD ANIMATION LOADING CODE
-				tex = Paths.getSparrowAtlas('characters/Blantad', 'shared');
-				frames = tex;
-				animation.addByPrefix('idle', 'Whitty idle dance', 24);
-				animation.addByPrefix('singUP', 'Whitty Sing Note UP', 24);
-				animation.addByPrefix('singRIGHT', 'Whitty sing note right', 24);
-				animation.addByPrefix('singDOWN', 'Whitty Sing Note DOWN', 24);
-				animation.addByPrefix('singLEFT', 'Whitty Sing Note LEFT', 24);
-
-				addOffset('idle');
-				addOffset("singUP", -6, 50);
-				addOffset("singRIGHT", 0, 27);
-				addOffset("singLEFT", -10, 10);
-				addOffset("singDOWN", 0, -30);
-
-				playAnim('idle');
 			case 'hellchartCarol':
 				// DAD ANIMATION LOADING CODE
 				tex = Paths.getSparrowAtlas('characters/Blantad', 'shared');
@@ -4584,27 +4567,6 @@ class Character extends FlxSprite
 				addOffset("singRIGHT", 0, 27);
 				addOffset("singLEFT", -10, 10);
 				addOffset("singDOWN", 0, -30);
-
-				playAnim('idle');
-
-
-			case 'eteled2':
-				// DAD ANIMATION LOADING CODE
-				tex = Paths.getSparrowAtlas('characters/Blantad', 'shared');
-				frames = tex;
-				animation.addByPrefix('idle', 'eteled idle dance', 24);
-				animation.addByPrefix('singUP', 'eteled Sing Note UP', 24);
-				animation.addByPrefix('singRIGHT', 'eteled Sing Note RIGHT', 24);
-				animation.addByPrefix('singDOWN', 'eteled Sing Note DOWN', 24);
-				animation.addByPrefix('singLEFT', 'eteled Sing Note LEFT', 24);
-				animation.addByPrefix('SCREAM', 'eteled SCREAM', 24);
-
-				addOffset('idle');
-				addOffset("singUP", -18, 66);
-				addOffset("singRIGHT", -21, -62);
-				addOffset("singLEFT", 243, 19);
-				addOffset("singDOWN", -6, -98);
-				addOffset("SCREAM", 142, 151);
 
 				playAnim('idle');
 
@@ -4860,38 +4822,6 @@ class Character extends FlxSprite
 				addOffset('lol-special', 62, 4);
 				addOffset('frick-special', -14, -1);
 				addOffset('dab-special', -5, -5);
-
-				playAnim('idle');
-
-				flipX = true;
-
-			case 'bf-aloe-confused':
-				tex = Paths.getSparrowAtlas('characters/ALOE_Confused');
-				frames = tex;
-		
-				animation.addByPrefix('idle', 'BF idle dance', 24, false);
-				animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
-				animation.addByPrefix('singDOWN', 'BF NOTE DOWN0', 24, false);
-				animation.addByPrefix('singUPmiss', 'BF NOTE UP MISS', 24, false);
-				animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS', 24, false);
-				animation.addByPrefix('singLEFT', 'BF NOTE LEFT0', 24, false);
-				animation.addByPrefix('singRIGHT', 'BF NOTE RIGHT0', 24, false);	
-				animation.addByPrefix('singLEFTmiss', 'BF NOTE LEFT MISS', 24, false);
-				animation.addByPrefix('singRIGHTmiss', 'BF NOTE RIGHT MISS', 24, false);
-				animation.addByPrefix('hey', 'BF HEY', 24, false);
-				animation.addByPrefix('scared', 'BF idle shaking', 24);
-
-				addOffset('idle');
-				addOffset("singUP", -25, 29);
-				addOffset("singRIGHT", -27, -1);
-				addOffset("singLEFT", -12, -9);
-				addOffset("singDOWN", 34, -49);
-				addOffset("singUPmiss", -7, 33);
-				addOffset("singRIGHTmiss", -12, 22);
-				addOffset("singLEFTmiss", -13, -2);
-				addOffset("singDOWNmiss", 24, -19);
-				addOffset("hey", -10, -2);
-				addOffset('scared', 16, 1);
 
 				playAnim('idle');
 

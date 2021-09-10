@@ -134,12 +134,12 @@ class PlayState extends MusicBeatState
 	public static var bf3:Character;
 	public static var bf4:Character;
 
-	var isdad:Bool = false;
+	var isdad:Bool = true;
 	var isdad2:Bool = false;
 	var isdad3:Bool = false;
 	var isdad4:Bool = false;
 
-	var isbf:Bool = false;
+	var isbf:Bool = true;
 	var isbf2:Bool = false;
 	var isbf3:Bool = false;
 	var isbf4:Bool = false;
