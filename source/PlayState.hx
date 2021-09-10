@@ -123,6 +123,30 @@ class PlayState extends MusicBeatState
 	public static var gf:Character;
 	public static var boyfriend:Boyfriend;
 
+	//	 MULTIPLE CHARACTERS SHIT, IDEK IF THIS WILL WORK BUT 
+	//   GOTTA HOPE LMAO	
+
+	var dad2:Character;
+	var dad3:Character;
+	var dad4:Character;
+
+	var boyfriend2:Character;
+	var boyfriend3:Character;
+	var boyfriend4:Character;
+
+	var isdad:Bool = false;
+	var isdad2:Bool = false;
+	var isdad3:Bool = false;
+	var isdad4:Bool = false;
+
+	var isbf:Bool = false;
+	var isbf2:Bool = false;
+	var isbf3:Bool = false;
+	var isbf4:Bool = false;
+
+	// LIKE I SAID,
+	// JUST GOTTA FUCKIN HOPE
+
 	public var notes:FlxTypedGroup<Note>;
 	private var unspawnNotes:Array<Note> = [];
 	private var sDir:Array<String> = ['LEFT', 'DOWN', 'UP', 'RIGHT'];
@@ -845,6 +869,52 @@ class PlayState extends MusicBeatState
 		
 		boyfriend = new Boyfriend(770, 450, SONG.player1);
 
+		/*
+		var dad2:Character;
+	var dad3:Character;
+	var dad4:Character;
+
+	var boyfriend2:Character;
+	var boyfriend3:Character;
+	var boyfriend4:Character;
+
+	var isdad:Bool = false;
+	var isdad2:Bool = false;
+	var isdad3:Bool = false;
+	var isdad4:Bool = false;
+
+	var isbf:Bool = false;
+	var isbf2:Bool = false;
+	var isbf3:Bool = false;
+	var isbf4:Bool = false;
+*/
+
+		if (isdad2)
+		{
+			dad2 = new Character(300, 100, 'dad');
+		}
+		if (isdad3)
+			{
+				dad3 = new Character(300, 100, 'dad');
+			}
+		if (isdad4)
+			{
+				dad4 = new Character(300, 100, 'dad');
+			}
+		if (isbf2)
+			{
+				bf2 = new Character(300, 100, 'bf');
+			}
+			if (isbf3)
+				{
+					bf3 = new Character(300, 100, 'bf');
+				}
+			if (isbf4)
+				{
+					bf4 = new Character(300, 100, 'bf');
+				}
+	
+
 		// REPOSITIONING PER STAGE
 		switch (curStage)
 		{
@@ -891,6 +961,39 @@ class PlayState extends MusicBeatState
 			// Shitty layering but whatev it works LOL
 			if (curStage == 'limo')
 				add(limo);
+
+			/*
+		var dad2:Character;
+	var dad3:Character;
+	var dad4:Character;
+
+	var boyfriend2:Character;
+	var boyfriend3:Character;
+	var boyfriend4:Character;
+
+	var isdad:Bool = false;
+	var isdad2:Bool = false;
+	var isdad3:Bool = false;
+	var isdad4:Bool = false;
+
+	var isbf:Bool = false;
+	var isbf2:Bool = false;
+	var isbf3:Bool = false;
+	var isbf4:Bool = false;
+*/
+			if (dad2 == true)
+				add(dad2);
+			if (dad3 == true)
+				add(dad3);
+			if (dad4 == true)
+				add(dad4);
+
+			if (bf2 == true)
+				add(bf2);
+			if (bf3 == true)
+				add(bf3);
+			if (bf4 == true)
+				add(bf4);
 
 			add(dad);
 			add(boyfriend);
@@ -2964,7 +3067,48 @@ class PlayState extends MusicBeatState
 									dadsDir = ['LEFT', 'LEFT', 'LEFT', 'LEFT', 'DOWN', 'UP', 'RIGHT', 'LEFT', 'UP', 'RIGHT', 'UP', 'LEFT', 'DOWN', 'RIGHT', 'LEFT', 'DOWN', 'UP', 'RIGHT', 'RIGHT', 'RIGHT', 'RIGHT'];
 								}
 	
-							dad.playAnim('sing' + dadsDir[daNote.noteData], true);
+								if (isdad == true)
+									{
+										dad.playAnim('sing' + dadsDir[daNote.noteData], true);
+										dad.holdTimer = 0;
+									}
+
+							if (isdad2 == true)
+							{
+								dad2.playAnim('sing' + dadsDir[daNote.noteData], true);
+								dad2.holdTimer = 0;
+							}
+							if (isdad3 == true)
+							{
+								dad3.playAnim('sing' + dadsDir[daNote.noteData], true);
+								dad3.holdTimer = 0;
+
+							}
+							if (isdad4 == true)
+							{
+								dad4.playAnim('sing' + dadsDir[daNote.noteData], true);
+								dad4.holdTimer = 0;
+							}
+
+							/*
+		var dad2:Character;
+	var dad3:Character;
+	var dad4:Character;
+
+	var boyfriend2:Character;
+	var boyfriend3:Character;
+	var boyfriend4:Character;
+
+	var isdad:Bool = false;
+	var isdad2:Bool = false;
+	var isdad3:Bool = false;
+	var isdad4:Bool = false;
+
+	var isbf:Bool = false;
+	var isbf2:Bool = false;
+	var isbf3:Bool = false;
+	var isbf4:Bool = false;
+*/
 						
 						if (FlxG.save.data.cpuStrums)
 						{
@@ -4542,9 +4686,47 @@ class PlayState extends MusicBeatState
 							{
 								sDir = ['LEFT', 'LEFT', 'LEFT', 'LEFT', 'DOWN', 'UP', 'RIGHT', 'LEFT', 'UP', 'RIGHT', 'UP', 'LEFT', 'DOWN', 'RIGHT', 'LEFT', 'DOWN', 'UP', 'RIGHT', 'RIGHT', 'RIGHT', 'RIGHT'];
 							}
-
+				if (isbf == true) {
 					boyfriend.playAnim('sing' + sDir[note.noteData], true);
 					boyfriend.holdTimer = 0;
+				}
+
+					if (isbf2 == true)
+						{
+							bf2.playAnim('sing' + sDir[note.noteData], true);
+							bf2.holdTimer = 0;
+						}
+						if (isdbf3 == true)
+						{
+							bf3.playAnim('sing' + sDir[note.noteData], true);
+							bf3.holdTimer = 0;
+
+						}
+						if (isbf4 == true)
+						{
+							bf4.playAnim('sing' + sDir[note.noteData], true);
+							bf4.holdTimer = 0;
+						}
+
+						/*
+	var dad2:Character;
+var dad3:Character;
+var dad4:Character;
+
+var boyfriend2:Character;
+var boyfriend3:Character;
+var boyfriend4:Character;
+
+var isdad:Bool = false;
+var isdad2:Bool = false;
+var isdad3:Bool = false;
+var isdad4:Bool = false;
+
+var isbf:Bool = false;
+var isbf2:Bool = false;
+var isbf3:Bool = false;
+var isbf4:Bool = false;
+*/
 
 		
 					#if windows
@@ -4691,6 +4873,64 @@ class PlayState extends MusicBeatState
 		gf.playAnim('scared', true);
 	}
 
+	/*
+	var dad2:Character;
+var dad3:Character;
+var dad4:Character;
+
+var boyfriend2:Character;
+var boyfriend3:Character;
+var boyfriend4:Character;
+
+var isdad:Bool = false;
+var isdad2:Bool = false;
+var isdad3:Bool = false;
+var isdad4:Bool = false;
+
+var isbf:Bool = false;
+var isbf2:Bool = false;
+var isbf3:Bool = false;
+var isbf4:Bool = false;
+*/
+
+
+	function resetCharacters():Void // this is just to fucking get them to stop signing when its not their turn
+	{
+		isdad = false;
+		isdad2 = false;
+		isdad3 = false;
+		isdad4 = false;
+
+		isbf = false;
+		isbf2 = false;
+		isbf3 = false;
+		isbf4 = false;
+	}
+
+	function switchCharacter(characters:String):Void
+	{
+		switch(characters)
+		{
+			case 'dad': 
+				isdad = true;
+			case 'dad2': 
+				isdad2 = true;
+			case 'dad3': 
+				isdad3 = true;
+			case 'dad4': 
+				isdad4 = true;
+
+			case 'bf': 
+				isbf = true;
+			case 'bf2': 
+				isbf2 = true;
+			case 'bf3': 
+				isbf3 = true;
+			case 'bf4': 
+				isbf4 = true;
+		}
+	}
+
 	var danced:Bool = false;
 
 	override function stepHit()
@@ -4747,6 +4987,25 @@ class PlayState extends MusicBeatState
 				dad.playAnim('danceLeft');
 			if (curBeat % 2 == 0 && dad.animOffsets.exists('danceRight'))
 				dad.playAnim('danceRight');
+		}
+
+		if (curSong == 'South')
+		{
+			isdad2 = true;
+			isbf2 = true;
+		}
+
+		if (curSong == 'South')
+		{
+			switch(curStep)
+			{
+				case 100: 
+					resetCharacters();
+					switchCharacter('dad');
+				case 200:
+					resetCharacters();
+					switchCharacter('bf2');
+			}
 		}
 
 		if (SONG.notes[Math.floor(curStep / 16)] != null)
