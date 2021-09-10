@@ -4999,12 +4999,6 @@ var isbf4:Bool = false;
 
 		if (curSong == 'South')
 		{
-			isdad2 = true;
-			isbf2 = true;
-		}
-
-		if (curSong == 'South')
-		{
 			switch(curStep)
 			{
 				case 100: 
