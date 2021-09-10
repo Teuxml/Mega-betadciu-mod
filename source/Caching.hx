@@ -109,6 +109,8 @@ class Caching extends MusicBeatState
 
         trace("Finished caching...");
 
+        trace("relax");
+
         FlxG.switchState(new TitleState());
     }
 
