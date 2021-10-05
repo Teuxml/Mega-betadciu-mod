@@ -2118,9 +2118,12 @@ class PlayState extends MusicBeatState
 			if (PlayStateChangeables.Optimize && player == 0)
 				continue;
 
-			if (SONG.noteStyle == null) {
-				switch(storyWeek) {case 6: noteTypeCheck = 'pixel';}
-			} else {noteTypeCheck = SONG.noteStyle;}
+		//	if (SONG.noteStyle == null) {
+		//		switch(storyWeek) {case 6: noteTypeCheck = 'pixel';}
+		//	} else {noteTypeCheck = SONG.noteStyle;}
+		// made it more understandable so its more easier for me
+
+			noteTypeCheck = SONG.noteStyle;
 
 			switch (noteTypeCheck)
 			{
@@ -4244,8 +4247,8 @@ class PlayState extends MusicBeatState
 					anas = [null,null,null,null,null,null,null];
 				else if (SONG.mania == 5)
 					anas = [null,null,null,null,null,null,null,null];
-				else if (SONG.mania == 6)
-					anas = [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null];
+				//else if (SONG.mania == 6)
+				//	anas = [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null];
 
 				for (i in 0...pressArray.length)
 					if (pressArray[i])
