@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": true,
+			"fps": 18,
+			"anim": "idle",
+			"indices": [],
+			"name": "mathias idle"
+		},
+		{
+			"offsets": [
+				0,
+				10
+			],
+			"loop": false,
+			"fps": 20,
+			"anim": "singUP",
+			"indices": [],
+			"name": "mathias up"
+		},
+		{
+			"offsets": [
+				10,
+				10
+			],
+			"loop": false,
+			"fps": 20,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "mathias left"
+		},
+		{
+			"offsets": [
+				-6,
+				-10
+			],
+			"loop": false,
+			"fps": 20,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "mathias down"
+		},
+		{
+			"offsets": [
+				-20,
+				0
+			],
+			"loop": false,
+			"fps": 20,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "mathias right"
+		}
+	],
+	"no_antialiasing": true,
+	"image": "characters/mathias",
+	"position": [
+		0,
+		-200
+	],
+	"healthicon": "mathias",
+	"flip_x": false,
+	"healthbar_colors": [
+		246,
+		4,
+		4
+	],
+	"camera_position": [
+		-50,
+		188
+	],
+	"sing_duration": 4,
+	"scale": 0.65
+}

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="lucas.png"><SubTexture name="lucas down0000" x="0" y="0" width="724" height="1284" frameX="0" frameY="0" frameWidth="724" frameHeight="1284" />
+<SubTexture name="lucas down0001" x="724" y="0" width="724" height="1284" frameX="0" frameY="0" frameWidth="724" frameHeight="1284" />
+<SubTexture name="lucas down0002" x="1448" y="0" width="724" height="1284" frameX="0" frameY="0" frameWidth="724" frameHeight="1284" />
+<SubTexture name="lucas down0003" x="2172" y="0" width="724" height="1284" frameX="0" frameY="0" frameWidth="724" frameHeight="1284" />
+<SubTexture name="lucas idle0000" x="0" y="1284" width="724" height="1284" frameX="0" frameY="0" frameWidth="724" frameHeight="1284" />
+<SubTexture name="lucas idle0001" x="724" y="1284" width="724" height="1284" frameX="0" frameY="0" frameWidth="724" frameHeight="1284" />
+<SubTexture name="lucas left0000" x="1448" y="1284" width="724" height="1284" frameX="0" frameY="0" frameWidth="724" frameHeight="1284" />
+<SubTexture name="lucas left0001" x="2172" y="1284" width="724" height="1284" frameX="0" frameY="0" frameWidth="724" frameHeight="1284" />
+<SubTexture name="lucas right0000" x="0" y="2568" width="724" height="1284" frameX="0" frameY="0" frameWidth="724" frameHeight="1284" />
+<SubTexture name="lucas right0001" x="724" y="2568" width="724" height="1284" frameX="0" frameY="0" frameWidth="724" frameHeight="1284" />
+<SubTexture name="lucas up0000" x="1448" y="2568" width="724" height="1284" frameX="0" frameY="0" frameWidth="724" frameHeight="1284" />
+<SubTexture name="lucas up0001" x="2172" y="2568" width="724" height="1284" frameX="0" frameY="0" frameWidth="724" frameHeight="1284" />
+</TextureAtlas>
