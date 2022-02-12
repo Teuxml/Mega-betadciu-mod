@@ -4778,6 +4778,21 @@ class PlayState extends MusicBeatState
 			}
 		}
 
+		public function addTextToDebug(text:String) {
+			#if LUA_ALLOWED
+			luaDebugGroup.forEachAlive(function(spr:DebugLuaText) {
+				spr.y += 20;
+			});
+	
+			if(luaDebugGroup.members.length > 34) {
+				var blah = luaDebugGroup.members[34];
+				blah.destroy();
+				luaDebugGroup.remove(blah);
+			}
+			luaDebugGroup.insert(0, new DebugLuaText(text, luaDebugGroup));
+			#end
+		}
+
 		function goodNoteHit(note:Note, resetMashViolation = true):Void
 			{
 
