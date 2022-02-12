@@ -268,6 +268,7 @@ class ModchartState
 					PlayState.dad = new Character(x, y, id);
 					PlayState.instance.addObject(PlayState.dad);
 					PlayState.instance.iconP2.animation.play(id);
+					PlayState.instance.reloadHealthBarColors();
 	}
 
 	function changeBoyfriendCharacter(id:String, x:Float, y:Float)
@@ -278,6 +279,7 @@ class ModchartState
 					PlayState.boyfriend = new Boyfriend(x, y, id);
 					PlayState.instance.addObject(PlayState.boyfriend);
 					PlayState.instance.iconP1.animation.play(id);
+					PlayState.instance.reloadHealthBarColors();
 	}
 
 	// this is better. easier to port shit from playstate.
@@ -299,6 +301,7 @@ class ModchartState
 					PlayState.dad = new Character(x, y, id);
 					PlayState.instance.addObject(PlayState.dad);
 					PlayState.instance.iconP2.animation.play(id);
+					PlayState.instance.reloadHealthBarColors();
 	}
 	function changeDad2CharacterBetter(x:Float, y:Float, id:String)
 		{		
@@ -338,6 +341,7 @@ class ModchartState
 						PlayState.boyfriend = new Boyfriend(x, y, id);
 						PlayState.instance.addObject(PlayState.boyfriend);
 						PlayState.instance.iconP2.animation.play(id);
+						PlayState.instance.reloadHealthBarColors();
 		}
 		function changeBoyfriend2CharacterBetter(x:Float, y:Float, id:String)
 			{		

@@ -1255,7 +1255,8 @@ class PlayState extends MusicBeatState
 		healthBar = new FlxBar(healthBarBG.x + 4, healthBarBG.y + 4, RIGHT_TO_LEFT, Std.int(healthBarBG.width - 8), Std.int(healthBarBG.height - 8), this,
 			'health', 0, 2);
 		healthBar.scrollFactor.set();
-		healthBar.createFilledBar(0xFFFF0000, 0xFF66FF33);
+		//healthBar.createFilledBar(0xFFFF0000, 0xFF66FF33);
+		//reloadHealthBarColors();
 		// healthBar
 		add(healthBar);
 
@@ -1305,6 +1306,7 @@ class PlayState extends MusicBeatState
 		iconP2 = new HealthIcon(SONG.player2, false);
 		iconP2.y = healthBar.y - (iconP2.height / 2);
 		add(iconP2);
+		reloadHealthBarColors();
 
 		strumLineNotes.cameras = [camHUD];
 		notes.cameras = [camHUD];
@@ -5119,6 +5121,13 @@ var isbf4:Bool = false;
 
 	var lightningStrikeBeat:Int = 0;
 	var lightningOffset:Int = 8;
+
+	public function reloadHealthBarColors() {
+		var dadC = FlxColor.fromInt(CoolUtil.dominantColor(iconP1));
+		var bfC = FlxColor.fromInt(CoolUtil.dominantColor(iconP2));
+
+		healthBar.createFilledBar(dadC, bfC); healthBar.updateBar();
+	}
 
 	override function beatHit()
 	{
