@@ -5123,13 +5123,8 @@ var isbf4:Bool = false;
 	var lightningOffset:Int = 8;
 
 	public function reloadHealthBarColors() {
-		var dadC:Dynamic; var bfC:Dynamic;
-
-		if (dad.isPsychFile)dadC = FlxColor.fromRGB(dad.healthColorArray[0], dad.healthColorArray[1], dad.healthColorArray[2]);
-		else dadC = 0xFFFF0000;
-
-		if (boyfriend.isPsychFile) bfC = FlxColor.fromRGB(boyfriend.healthColorArray[0], boyfriend.healthColorArray[1], boyfriend.healthColorArray[2]);
-		else bfC = 0xFF66FF33;
+		var dadC = FlxColor.fromInt(CoolUtil.dominantColor(iconP1));
+		var bfC = FlxColor.fromInt(CoolUtil.dominantColor(iconP2));
 
 		healthBar.createFilledBar(dadC, bfC); healthBar.updateBar();
 	}
