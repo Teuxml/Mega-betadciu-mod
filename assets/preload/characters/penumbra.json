@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				20,
+				30
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "idle",
+			"loop": false,
+			"name": "penumbra_idle"
+		},
+		{
+			"offsets": [
+				90,
+				20
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singDOWN",
+			"loop": false,
+			"name": "penumbra_down"
+		},
+		{
+			"offsets": [
+				29,
+				47
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "penumbra_left"
+		},
+		{
+			"offsets": [
+				50,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "penumbra_right"
+		},
+		{
+			"offsets": [
+				62,
+				81
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singUP",
+			"loop": false,
+			"name": "penumbra_up"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/penumbra",
+	"position": [
+		30,
+		110
+	],
+	"healthicon": "penumbra",
+	"flip_x": false,
+	"healthbar_colors": [
+		229,
+		101,
+		61
+	],
+	"camera_position": [
+		0,
+		0
+	],
+	"sing_duration": 4,
+	"scale": 1
+}
