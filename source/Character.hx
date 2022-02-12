@@ -236,6 +236,36 @@ class Character extends FlxSprite
 
 				playAnim('danceRight');
 
+			case 'tails':
+				frames = Paths.getSparrowAtlas('characters/tails','shared');
+				animation.addByPrefix('idle', "idle", 24, false);
+				animation.addByPrefix('singUP', "up", 24, false);
+				animation.addByPrefix('singRIGHT', "right", 24, false);
+				animation.addByPrefix('singLEFT', "left", 24, false);
+				animation.addByPrefix('singDOWN', "down", 24, false);
+
+				loadOffsets();
+				playAnim('idle');
+				setGraphicSize(Std.int(width * 0.65));
+				updateHitbox();
+
+				antialiasing = true;
+
+			case 'sonic':
+				frames = Paths.getSparrowAtlas('characters/sonic','shared');
+				animation.addByPrefix('idle', "idle", 24, false);
+				animation.addByPrefix('singUP', "up", 24, false);
+				animation.addByPrefix('singRIGHT', "right", 24, false);
+				animation.addByPrefix('singLEFT', "left", 24, false);
+				animation.addByPrefix('singDOWN', "down", 24, false);
+
+				loadOffsets();
+				playAnim('idle');
+				setGraphicSize(Std.int(width * 0.7));
+				updateHitbox();
+
+				antialiasing = true;
+
 			case 'gf-selever' | 'gf-selever-special' | 'gf-selever-bop':
 				switch (curCharacter)
 				{
