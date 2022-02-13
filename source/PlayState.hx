@@ -264,6 +264,7 @@ class PlayState extends MusicBeatState
 
 	//private var luaDebugGroup:FlxTypedGroup<DebugLuaText>;
 	public var introSoundsSuffix:String = '';
+	public var isPixelStage:Null<Bool> = null; //multiple bugs dealing with pixel stuff so we gon use var.
 
 	override public function create()
 	{
@@ -414,6 +415,14 @@ class PlayState extends MusicBeatState
 				//i should check if its stage (but this is when none is found in chart anyway)
 			}
 		} else {stageCheck = SONG.stage;}
+
+		switch (SONG.song.toLowerCase())
+		{
+			case 'senpai' | 'roses' | 'thorns':
+				isPixelStage = true;
+			default:
+				isPixelStage = false;
+		}
 
 		if (!PlayStateChangeables.Optimize)
 		{
@@ -998,7 +1007,7 @@ class PlayState extends MusicBeatState
 				dad.x -= 80;
 		}
 
-		if (!curStage.contains('school'))
+		if (!isPixelStage)
 		{
 			switch (SONG.player2)
 			{
@@ -1016,51 +1025,12 @@ class PlayState extends MusicBeatState
 		
 		boyfriend = new Boyfriend(770, 450, SONG.player1);
 
-		/*
-		var dad2:Character;
-	var dad3:Character;
-	var dad4:Character;
-
-	var boyfriend2:Character;
-	var boyfriend3:Character;
-	var boyfriend4:Character;
-
-	var isdad:Bool = false;
-	var isdad2:Bool = false;
-	var isdad3:Bool = false;
-	var isdad4:Bool = false;
-
-	var isbf:Bool = false;
-	var isbf2:Bool = false;
-	var isbf3:Bool = false;
-	var isbf4:Bool = false;
-*/
-
-		if (isdad2)
-		{
-			dad2 = new Character(300, 100, 'dad');
-		}
-		if (isdad3)
-			{
-				dad3 = new Character(300, 100, 'dad');
-			}
-		if (isdad4)
-			{
-				dad4 = new Character(300, 100, 'dad');
-			}
-		if (isbf2)
-			{
-				bf2 = new Character(300, 100, 'bf');
-			}
-			if (isbf3)
-				{
-					bf3 = new Character(300, 100, 'bf');
-				}
-			if (isbf4)
-				{
-					bf4 = new Character(300, 100, 'bf');
-				}
-	
+		if (isdad2) dad2 = new Character(300, 100, 'dad');
+		if (isdad3) dad3 = new Character(300, 100, 'dad');
+		if (isdad4) dad4 = new Character(300, 100, 'dad');
+		if (isbf2)   bf2 = new Character(300, 100, 'bf');
+		if (isbf3)   bf3 = new Character(300, 100, 'bf');
+		if (isbf4)   bf4 = new Character(300, 100, 'bf');
 
 		// REPOSITIONING PER STAGE
 		switch (curStage)
@@ -1643,7 +1613,7 @@ class PlayState extends MusicBeatState
 					ready.scrollFactor.set();
 					ready.updateHitbox();
 
-					if (curStage.startsWith('school'))
+					if (isPixelStage)
 						ready.setGraphicSize(Std.int(ready.width * daPixelZoom));
 
 					ready.screenCenter();
@@ -1660,7 +1630,7 @@ class PlayState extends MusicBeatState
 					var set:FlxSprite = new FlxSprite().loadGraphic(Paths.image(introAlts[1]));
 					set.scrollFactor.set();
 
-					if (curStage.startsWith('school'))
+					if (isPixelStage)
 						set.setGraphicSize(Std.int(set.width * daPixelZoom));
 
 					set.screenCenter();
@@ -1677,7 +1647,7 @@ class PlayState extends MusicBeatState
 					var go:FlxSprite = new FlxSprite().loadGraphic(Paths.image(introAlts[2]));
 					go.scrollFactor.set();
 
-					if (curStage.startsWith('school'))
+					if (isPixelStage)
 						go.setGraphicSize(Std.int(go.width * daPixelZoom));
 
 					go.updateHitbox();
@@ -3281,7 +3251,7 @@ class PlayState extends MusicBeatState
 								{
 									spr.animation.play('confirm', true);
 								}
-								if (spr.animation.curAnim.name == 'confirm' && !curStage.startsWith('school'))
+								if (spr.animation.curAnim.name == 'confirm' && !isPixelStage)
 								{
 									spr.centerOffsets();
 
@@ -3714,7 +3684,7 @@ class PlayState extends MusicBeatState
 			var pixelShitPart1:String = "";
 			var pixelShitPart2:String = '';
 	
-			if (curStage.startsWith('school'))
+			if (isPixelStage)
 			{
 				pixelShitPart1 = 'weeb/pixelUI/';
 				pixelShitPart2 = '-pixel';
@@ -3803,7 +3773,7 @@ class PlayState extends MusicBeatState
 			currentTimingShown.velocity.x += comboSpr.velocity.x;
 			if(!PlayStateChangeables.botPlay || loadRep) add(rating);
 	
-			if (!curStage.startsWith('school'))
+			if (!isPixelStage)
 			{
 				rating.setGraphicSize(Std.int(rating.width * 0.7));
 				rating.antialiasing = true;
@@ -3855,7 +3825,7 @@ class PlayState extends MusicBeatState
 				numScore.y = rating.y + 100;
 				numScore.cameras = [camHUD];
 
-				if (!curStage.startsWith('school'))
+				if (!isPixelStage)
 				{
 					numScore.antialiasing = true;
 					numScore.setGraphicSize(Std.int(numScore.width * 0.5));
@@ -4418,7 +4388,7 @@ class PlayState extends MusicBeatState
 						spr.animation.play('static');
 					
 		 
-					if (spr.animation.curAnim.name == 'confirm' && !curStage.startsWith('school'))
+					if (spr.animation.curAnim.name == 'confirm' && !isPixelStage)
 					{
 						spr.centerOffsets();
 						if (SONG.mania == 0)
