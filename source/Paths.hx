@@ -241,6 +241,12 @@ class Paths
 		return getPath('images/$key.png', IMAGE, library);
 	}
 
+	inline static public function hScript(file:String)
+	{
+		//return getPath('scripts/$script.txt', TEXT, library);
+		return 'assets/scripts/$file/script.hscript';
+	}
+
 	inline static public function psychImage(key:String, ?library:String):FlxGraphic
 	{
 		// streamlined the assets process more
