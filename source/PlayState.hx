@@ -465,7 +465,7 @@ class PlayState extends MusicBeatState
 		{
 			case 'volcano':
 				var boxfloor:FlxSprite = new FlxSprite(-400, -200);
-				boxfloor.frames = Paths.getSparrowAtlas('volcanoanimated');
+				boxfloor.frames = Paths.getSparrowAtlas('volcanoanimated', 'purgatory');
 				boxfloor.animation.addByPrefix('floorbang', "BUBBLE", 24);
 				boxfloor.animation.play('floorbang');
 				boxfloor.scrollFactor.set(0.9, 0.9);
