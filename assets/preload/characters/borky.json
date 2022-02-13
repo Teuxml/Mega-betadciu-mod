@@ -1,0 +1,85 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 12,
+			"name": "funni borky idle",
+			"indices": [
+				0,
+				1,
+				2,
+				3,
+				2,
+				1
+			]
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "singLEFT",
+			"fps": 12,
+			"name": "funni borky left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "singDOWN",
+			"fps": 12,
+			"name": "funni borky down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "singUP",
+			"fps": 12,
+			"name": "funni borky up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "singRIGHT",
+			"fps": 12,
+			"name": "funni borky right",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/borky",
+	"position": [
+		-270,
+		270
+	],
+	"healthicon": "borky",
+	"flip_x": false,
+	"healthbar_colors": [
+		65,
+		65,
+		65
+	],
+	"camera_position": [
+		170,
+		140
+	],
+	"sing_duration": 4,
+	"scale": 0.6
+}
