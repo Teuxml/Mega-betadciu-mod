@@ -33,16 +33,15 @@ class HealthIcon extends FlxSprite
 	{
 		super();
 		var name:String = 'icons/psych/' + char;
-	//	trace('images/' + name + '.png');
 		if(Paths.fileExists('images/' + name + '.png', IMAGE)){ //later versions of psych icon support
-			trace('we are dealing with a psych icon. do the routine. | images/' + name + '.png');
+			trace('we are dealing with an old psych icon. do the routine. | images/' + name + '.png');
 			isOldIcon = (char == 'bf-old');
 			this.isPlayer = isPlayer;
 			changeIcon(char);
 			scrollFactor.set();
 		}
 		else if(Paths.fileExists('images/icons/psych/icon-' + char + '.png', IMAGE)){ //older versions of psych icon support
-			trace('we are dealing with a psych icon. do the routine. | images/' + name + '.png');
+			trace('we are dealing with a new psych icon. do the routine. | images/' + name + '.png');
 			isOldIcon = (char == 'bf-old');
 			this.isPlayer = isPlayer;
 			changeIcon(char);
@@ -440,8 +439,8 @@ class HealthIcon extends FlxSprite
 	public function changeIcon(char:String) {
 		if(this.char != char) {
 			var name:String = 'icons/psych/' + char;
-			if(!Paths.fileExists('images/' + name + '.png', IMAGE)) name = 'icons/icon-' + char; //Older versions of psych engine's support
-			if(!Paths.fileExists('images/' + name + '.png', IMAGE)) name = 'icons/icon-face'; //Prevents crash from missing icon
+			if(!Paths.fileExists('images/' + name + '.png', IMAGE)) name = 'icons/psych/icon-' + char; //Older versions of psych engine's support
+			if(!Paths.fileExists('images/' + name + '.png', IMAGE)) name = 'icons/psych/icon-face'; //Prevents crash from missing icon
 			var file:Dynamic = Paths.image(name);
 
 			loadGraphic(file); //Load stupidly first for getting the file size
