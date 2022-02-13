@@ -32,8 +32,17 @@ class HealthIcon extends FlxSprite
 	public function new(char:String = 'bf', isPlayer:Bool = false)
 	{
 		super();
-		var name:String = 'icons/psych' + char;
-		if(Paths.fileExists('images/' + name + '.png', IMAGE)){
+		var name:String = 'icons/psych/' + char;
+	//	trace('images/' + name + '.png');
+		if(Paths.fileExists('images/' + name + '.png', IMAGE)){ //later versions of psych icon support
+			trace('we are dealing with a psych icon. do the routine. | images/' + name + '.png');
+			isOldIcon = (char == 'bf-old');
+			this.isPlayer = isPlayer;
+			changeIcon(char);
+			scrollFactor.set();
+		}
+		else if(Paths.fileExists('images/icons/psych/icon-' + char + '.png', IMAGE)){ //older versions of psych icon support
+			trace('we are dealing with a psych icon. do the routine. | images/' + name + '.png');
 			isOldIcon = (char == 'bf-old');
 			this.isPlayer = isPlayer;
 			changeIcon(char);
@@ -41,6 +50,7 @@ class HealthIcon extends FlxSprite
 		}
 		else
 		{
+			trace('so ur one of those peeps huh?');
 			loadGraphic(Paths.image('icons/blantados/iconGrid'), true, 150, 150);
 
 			antialiasing = true;
