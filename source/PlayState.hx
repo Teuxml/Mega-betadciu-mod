@@ -262,7 +262,8 @@ class PlayState extends MusicBeatState
 	public function removeObject(object:FlxBasic) { remove(object); }
 	public function destroyObject(object:FlxBasic) { object.destroy(); }
 
-
+	//private var luaDebugGroup:FlxTypedGroup<DebugLuaText>;
+	public var introSoundsSuffix:String = '';
 
 	override public function create()
 	{
@@ -1151,6 +1152,11 @@ class PlayState extends MusicBeatState
 			add(boyfriend);
 		}
 
+		#if LUA_ALLOWED
+	//	luaDebugGroup = new FlxTypedGroup<DebugLuaText>();
+	//	luaDebugGroup.cameras = [camOther];
+	//	add(luaDebugGroup);
+		#end
 
 		if (loadRep)
 		{
@@ -4780,7 +4786,7 @@ class PlayState extends MusicBeatState
 
 		public function addTextToDebug(text:String) {
 			#if LUA_ALLOWED
-			luaDebugGroup.forEachAlive(function(spr:DebugLuaText) {
+			/*luaDebugGroup.forEachAlive(function(spr:DebugLuaText) {
 				spr.y += 20;
 			});
 	
@@ -4789,7 +4795,9 @@ class PlayState extends MusicBeatState
 				blah.destroy();
 				luaDebugGroup.remove(blah);
 			}
-			luaDebugGroup.insert(0, new DebugLuaText(text, luaDebugGroup));
+			luaDebugGroup.insert(0, new DebugLuaText(text, luaDebugGroup));*/
+			FlxG.log.add(text);
+			trace(text);
 			#end
 		}
 

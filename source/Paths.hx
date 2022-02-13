@@ -53,6 +53,34 @@ class Paths
 			dumpExclusions.push(key);
 	}
 
+	static public function getTextFromFile(key:String, ?ignoreMods:Bool = false):String
+		{
+			#if sys
+			#if MODS_ALLOWED
+			if (!ignoreMods && FileSystem.exists(modFolders(key)))
+				return File.getContent(modFolders(key));
+			#end
+	
+			if (FileSystem.exists(getPreloadPath(key)))
+				return File.getContent(getPreloadPath(key));
+	
+			if (currentLevel != null)
+			{
+				var levelPath:String = '';
+				if(currentLevel != 'shared') {
+					levelPath = getLibraryPathForce(key, currentLevel);
+					if (FileSystem.exists(levelPath))
+						return File.getContent(levelPath);
+				}
+	
+				levelPath = getLibraryPathForce(key, 'shared');
+				if (FileSystem.exists(levelPath))
+					return File.getContent(levelPath);
+			}
+			#end
+			return Assets.getText(getPsychPath(key, TEXT));
+		}
+
 	public static var dumpExclusions:Array<String> = [];
 	/// haya I love you for the base cache dump I took to the max
 	public static function clearUnusedMemory() {
@@ -99,6 +127,34 @@ class Paths
 
 		return getPreloadPath(file);
 	}
+
+	public static function getPsychPath(file:String, type:AssetType, ?library:Null<String> = null)
+		{
+			if (library != null)
+				return getLibraryPath(file, library);
+	
+			if (currentLevel != null)
+			{
+				var levelPath:String = '';
+				if(currentLevel != 'shared') {
+					levelPath = getLibraryPathForce(file, currentLevel);
+					if (OpenFlAssets.exists(levelPath, type))
+						return levelPath;
+				}
+	
+				levelPath = getLibraryPathForce(file, "shared");
+				if (OpenFlAssets.exists(levelPath, type))
+					return levelPath;
+			}
+	
+			return getPreloadPath(file);
+		}
+
+	inline static public function txtNew(key:String, ?library:String)
+		{
+			return getPath('$key.txt', TEXT, library);
+		}
+	
 
 	static public function getLibraryPath(file:String, library = "preload")
 	{
@@ -215,7 +271,7 @@ class Paths
 			return currentTrackedAssets.get(key);
 		}
 		#end
-		var path = getPath('images/$key.png', IMAGE, library);
+		var path = getPsychPath('images/$key.png', IMAGE, library);
 		if (OpenFlAssets.exists(path, IMAGE)) {
 			if(!currentTrackedAssets.exists(key)) {
 				var newGraphic:FlxGraphic = FlxG.bitmap.add(path, false, key);
@@ -241,14 +297,14 @@ class Paths
 		}
 		#end
 		// I hate this so god damn much
-		var gottenPath:String = getPath('$path/$key.$SOUND_EXT', SOUND, library);	
+		var gottenPath:String = getPsychPath('$path/$key.$SOUND_EXT', SOUND, library);	
 		gottenPath = gottenPath.substring(gottenPath.indexOf(':') + 1, gottenPath.length);
 		// trace(gottenPath);
 		if(!currentTrackedSounds.exists(gottenPath)) 
 		#if MODS_ALLOWED
 			currentTrackedSounds.set(gottenPath, Sound.fromFile('./' + gottenPath));
 		#else
-			currentTrackedSounds.set(gottenPath, OpenFlAssets.getSound(getPath('$path/$key.$SOUND_EXT', SOUND, library)));
+			currentTrackedSounds.set(gottenPath, OpenFlAssets.getSound(getPsychPath('$path/$key.$SOUND_EXT', SOUND, library)));
 		#end
 		localTrackedAssets.push(key);
 		return currentTrackedSounds.get(gottenPath);
@@ -354,7 +410,7 @@ class Paths
 			}
 			#end
 			
-			if(OpenFlAssets.exists(Paths.getPath(key, type))) {
+			if(OpenFlAssets.exists(Paths.getPsychPath(key, type))) {
 				return true;
 			}
 			return false;

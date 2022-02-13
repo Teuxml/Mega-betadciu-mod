@@ -17,6 +17,9 @@ import openfl.utils.AssetType;
 import openfl.utils.Assets;
 import haxe.Json;
 import haxe.format.JsonParser;
+import flixel.util.FlxColor;
+import lime.app.Application;
+import flash.display.BitmapData;
 
 using StringTools;
 
@@ -99,6 +102,7 @@ class Character extends FlxSprite
 	public var noAntialiasing:Bool = false;
 	public var originalFlipX:Bool = false;
 	public var healthColorArray:Array<Int> = [255, 0, 0];
+	public var DEFAULT_CHARACTER:String = 'bf';
 
 	public function new(x:Float, y:Float, ?character:String = "bf", ?isPlayer:Bool = false)
 	{
@@ -244,7 +248,7 @@ class Character extends FlxSprite
 				animation.addByPrefix('singLEFT', "left", 24, false);
 				animation.addByPrefix('singDOWN', "down", 24, false);
 
-				loadOffsets();
+				loadOffsetFile(curCharacter);
 				playAnim('idle');
 				setGraphicSize(Std.int(width * 0.65));
 				updateHitbox();
@@ -259,7 +263,7 @@ class Character extends FlxSprite
 				animation.addByPrefix('singLEFT', "left", 24, false);
 				animation.addByPrefix('singDOWN', "down", 24, false);
 
-				loadOffsets();
+				loadOffsetFile(curCharacter);
 				playAnim('idle');
 				setGraphicSize(Std.int(width * 0.7));
 				updateHitbox();
@@ -7068,14 +7072,14 @@ class Character extends FlxSprite
 				//texture
 				#if MODS_ALLOWED
 				var modTxtToFind:String = Paths.modsTxt(json.image);
-				var txtToFind:String = Paths.getPath('images/' + json.image + '.txt', TEXT);
+				var txtToFind:String = Paths.getPsychPath('images/' + json.image + '.txt', TEXT);
 				
 				//var modTextureToFind:String = Paths.modFolders("images/"+json.image);
 				//var textureToFind:String = Paths.getPath('images/' + json.image, new AssetType();
 				
 				if (FileSystem.exists(modTxtToFind) || FileSystem.exists(txtToFind) || Assets.exists(txtToFind))
 				#else
-				if (Assets.exists(Paths.getPath('images/' + json.image + '.txt', TEXT)))
+				if (Assets.exists(Paths.getPsychPath('images/' + json.image + '.txt', TEXT)))
 				#end
 				{
 					
@@ -7088,14 +7092,14 @@ class Character extends FlxSprite
 				
 				#if MODS_ALLOWED
 				var modAnimToFind:String = Paths.modFolders('images/' + json.image + '/Animation.json');
-				var animToFind:String = Paths.getPath('images/' + json.image + '/Animation.json', TEXT);
+				var animToFind:String = Paths.getPsychPath('images/' + json.image + '/Animation.json', TEXT);
 				
 				//var modTextureToFind:String = Paths.modFolders("images/"+json.image);
 				//var textureToFind:String = Paths.getPath('images/' + json.image, new AssetType();
 				
 				if (FileSystem.exists(modAnimToFind) || FileSystem.exists(animToFind) || Assets.exists(animToFind))
 				#else
-				if (Assets.exists(Paths.getPath('images/' + json.image + '/Animation.json', TEXT)))
+				if (Assets.exists(Paths.getPsychPath('images/' + json.image + '/Animation.json', TEXT)))
 				#end
 				{
 					
@@ -7264,6 +7268,74 @@ class Character extends FlxSprite
 	}
 	}
 
+	public function loadAnims(character:String)
+	{
+		var anim:Array<String>;
+			
+		anim = CoolUtil.coolTextFile(Paths.txtNew('images/characters/anims/' + character + "Anims", 'shared'));
+			
+		for (i in 0...anim.length)
+		{
+			var data:Array<String> = anim[i].split(':');
+			var loop:Bool = false;
+	
+			if (data[4] == null)
+				loop = false;
+			else
+			{
+				if (data[4] == 'true')
+					loop = true;
+				else if (data[4] == 'false')
+						loop = false;
+			}
+	
+			if (data[0] == 'prefix')
+				animation.addByPrefix(data[1], data[2], Std.parseInt(data[3]), loop);
+	
+			//still testing indices so it may not work.  EDIT: I gave up. idk how this works. just use this for prefix characters only
+			//if (data[0] == 'indices')
+			//animation.addByPrefix(data[1], data[2], animIndices, "", Std.parseInt(data[3]), loop);
+		}
+	}
+
+	public function loadOffsetFile(character:String)
+		{
+			var offset:Array<String>;
+			
+			if (isPlayer){
+				try {
+					offset = CoolUtil.coolTextFile(Paths.txtNew('images/characters/offsets/' + character + "PlayerOffsets", 'shared'));
+				} catch (e) {
+					try {
+						offset = CoolUtil.coolTextFile(Paths.txtNew('images/characters/offsets/' + character + "Offsets", 'shared'));
+					}
+					catch(e) {
+						offset = CoolUtil.coolTextFile(Paths.txtNew('images/characters/offsets/noOffsets', 'shared'));
+					}	
+				}
+				
+			}
+			else{
+				try {
+					offset = CoolUtil.coolTextFile(Paths.txtNew('images/characters/offsets/' + character + "Offsets", 'shared'));
+				} catch (e) {
+					try {
+						offset = CoolUtil.coolTextFile(Paths.txtNew('images/characters/offsets/' + character + "PlayerOffsets", 'shared'));
+					}
+					catch(e) {
+						offset = CoolUtil.coolTextFile(Paths.txtNew('images/characters/offsets/noOffsets', 'shared'));
+					}		
+				}
+			}
+			
+	
+			for (i in 0...offset.length)
+			{
+				var data:Array<String> = offset[i].split(' ');
+				addOffset(data[0], Std.parseInt(data[1]), Std.parseInt(data[2]));
+			}
+		}
+
 	override function update(elapsed:Float)
 	{
 		switch (isPsychFile) {
@@ -7381,10 +7453,10 @@ class Character extends FlxSprite
 				}		
 			}
 
-			if (color != FlxColor.WHITE)
-			{
-				color = FlxColor.WHITE;
-			}
+		//	if (color != FlxColor.WHITE)
+		//	{
+		//		color = FlxColor.WHITE;
+		//	}
 		}
 		case true:
 			if (!debugMode && !specialAnim)
