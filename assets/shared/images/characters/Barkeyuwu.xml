@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="Barkeyuwu.png"><SubTexture name="Barkeyuwu up0000" x="0" y="0" width="2364" height="1644" frameX="0" frameY="0" frameWidth="2364" frameHeight="1644" />
+<SubTexture name="Barkeyuwu up0001" x="2364" y="0" width="2364" height="1644" frameX="0" frameY="0" frameWidth="2364" frameHeight="1644" />
+<SubTexture name="Barkeyuwu up0002" x="4728" y="0" width="2364" height="1644" frameX="0" frameY="0" frameWidth="2364" frameHeight="1644" />
+<SubTexture name="Barkeyuwu right0000" x="7092" y="0" width="2364" height="1644" frameX="0" frameY="0" frameWidth="2364" frameHeight="1644" />
+<SubTexture name="Barkeyuwu right0001" x="0" y="1644" width="2364" height="1644" frameX="0" frameY="0" frameWidth="2364" frameHeight="1644" />
+<SubTexture name="Barkeyuwu right0002" x="2364" y="1644" width="2364" height="1644" frameX="0" frameY="0" frameWidth="2364" frameHeight="1644" />
+<SubTexture name="Barkeyuwu idle0000" x="4728" y="1644" width="2364" height="1644" frameX="0" frameY="0" frameWidth="2364" frameHeight="1644" />
+<SubTexture name="Barkeyuwu idle0001" x="7092" y="1644" width="2364" height="1644" frameX="0" frameY="0" frameWidth="2364" frameHeight="1644" />
+<SubTexture name="Barkeyuwu idle0002" x="0" y="3288" width="2364" height="1644" frameX="0" frameY="0" frameWidth="2364" frameHeight="1644" />
+<SubTexture name="Barkeyuwu idle0003" x="2364" y="3288" width="2364" height="1644" frameX="0" frameY="0" frameWidth="2364" frameHeight="1644" />
+<SubTexture name="Barkeyuwu left0000" x="4728" y="3288" width="2364" height="1644" frameX="0" frameY="0" frameWidth="2364" frameHeight="1644" />
+<SubTexture name="Barkeyuwu left0001" x="7092" y="3288" width="2364" height="1644" frameX="0" frameY="0" frameWidth="2364" frameHeight="1644" />
+<SubTexture name="Barkeyuwu left0002" x="0" y="4932" width="2364" height="1644" frameX="0" frameY="0" frameWidth="2364" frameHeight="1644" />
+<SubTexture name="Barkeyuwu down0000" x="2364" y="4932" width="2364" height="1644" frameX="0" frameY="0" frameWidth="2364" frameHeight="1644" />
+<SubTexture name="Barkeyuwu down0001" x="4728" y="4932" width="2364" height="1644" frameX="0" frameY="0" frameWidth="2364" frameHeight="1644" />
+<SubTexture name="Barkeyuwu down0002" x="7092" y="4932" width="2364" height="1644" frameX="0" frameY="0" frameWidth="2364" frameHeight="1644" />
+</TextureAtlas>
