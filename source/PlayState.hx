@@ -459,12 +459,14 @@ class PlayState extends MusicBeatState
 				stageCheck = SONG.song.toLowerCase();
 		}}
 
+		trace(stageCheck);
+
 		if (!PlayStateChangeables.Optimize)
 		{
 
 		switch(stageCheck)
 		{
-			case 'volcano':
+			case 'volcano' | 'purgatory':
 				var boxfloor:FlxSprite = new FlxSprite(-400, -200);
 				boxfloor.frames = Paths.getSparrowAtlas('volcanoanimated', 'purgatory');
 				boxfloor.animation.addByPrefix('floorbang', "BUBBLE", 24);
