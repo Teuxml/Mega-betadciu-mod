@@ -33,6 +33,8 @@ class HealthIcon extends FlxSprite
 	{
 		super();
 		var name:String = 'icons/psych/' + char;
+		trace('images/icons/psych/icon-' + char);
+		trace('images/icons/psych/' + char);
 		if(Paths.fileExists('images/' + name + '.png', IMAGE)){ //later versions of psych icon support
 			trace('we are dealing with an old psych icon. do the routine. | images/' + name + '.png');
 			isOldIcon = (char == 'bf-old');
@@ -411,7 +413,12 @@ class HealthIcon extends FlxSprite
 			animation.add('sayori-blue', [496, 497], 0, false, isPlayer);
 			
 			animation.play(char);
-		}
+
+			if (animation.curAnim == null) {
+				trace('its returning null!!! NOOOOOOOOOOO');
+				animation.add(char, [10, 11], 0, false, isPlayer);
+				animation.play(char);
+		}}
 		
 		switch(char)
 		{
@@ -440,7 +447,8 @@ class HealthIcon extends FlxSprite
 		if(this.char != char) {
 			var name:String = 'icons/psych/' + char;
 			if(!Paths.fileExists('images/' + name + '.png', IMAGE)) name = 'icons/psych/icon-' + char; //Older versions of psych engine's support
-			if(!Paths.fileExists('images/' + name + '.png', IMAGE)) name = 'icons/psych/icon-face'; //Prevents crash from missing icon
+			if(!Paths.fileExists('images/' + name + '.png', IMAGE)) name = 'icons/psych/icon-dave'; //Prevents crash from missing icon
+			trace('images/' + name + '.png');
 			var file:Dynamic = Paths.image(name);
 
 			loadGraphic(file); //Load stupidly first for getting the file size
