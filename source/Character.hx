@@ -7031,7 +7031,7 @@ class Character extends FlxSprite
 	
 				playAnim('idle');
 			default:
-				ifPsychFile = true;
+				isPsychFile = true;
 				var characterPath:String = 'characters/' + curCharacter + '.json';
 				#if MODS_ALLOWED
 				
@@ -7143,7 +7143,7 @@ class Character extends FlxSprite
 					healthColorArray = json.healthbar_colors;
 
 				antialiasing = !noAntialiasing;
-				if(!ClientPrefs.globalAntialiasing) antialiasing = false;
+				if(!FlxG.save.data.globalAntialiasing) antialiasing = false;
 
 				animationsArray = json.animations;
 				if(animationsArray != null && animationsArray.length > 0) {

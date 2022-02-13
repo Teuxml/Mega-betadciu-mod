@@ -15,6 +15,8 @@ import flash.display.BitmapData;
 import sys.FileSystem;
 #end
 
+using StringTools;
+
 class HealthIcon extends FlxSprite
 
 {
@@ -441,7 +443,7 @@ class HealthIcon extends FlxSprite
 			animation.play(char);
 			this.char = char;
 
-			antialiasing = ClientPrefs.globalAntialiasing;
+			antialiasing = FlxG.save.data.globalAntialiasing;
 			if(char.endsWith('-pixel')) {
 				antialiasing = false;
 			}
