@@ -450,13 +450,14 @@ class PlayState extends MusicBeatState
 				isPixelStage = false;
 		}
 
+		if (stageCheck == null) {
 		switch (SONG.song.toLowerCase())
 		{
 			case 'purgatory':
 				stageCheck = 'volcano';
 			default: //shit
 				stageCheck = SONG.song.toLowerCase();
-		}
+		}}
 
 		if (!PlayStateChangeables.Optimize)
 		{
