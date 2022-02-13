@@ -32,7 +32,7 @@ class HealthIcon extends FlxSprite
 	public function new(char:String = 'bf', isPlayer:Bool = false)
 	{
 		super();
-		var name:String = 'icons/' + char;
+		var name:String = 'icons/psych' + char;
 		if(Paths.fileExists('images/' + name + '.png', IMAGE)){
 			isOldIcon = (char == 'bf-old');
 			this.isPlayer = isPlayer;
@@ -41,7 +41,7 @@ class HealthIcon extends FlxSprite
 		}
 		else
 		{
-			loadGraphic(Paths.image('iconGrid'), true, 150, 150);
+			loadGraphic(Paths.image('icons/blantados/iconGrid'), true, 150, 150);
 
 			antialiasing = true;
 			animation.add('bf', [0, 1], 0, false, isPlayer);
@@ -429,7 +429,7 @@ class HealthIcon extends FlxSprite
 	private var iconOffsets:Array<Float> = [0, 0];
 	public function changeIcon(char:String) {
 		if(this.char != char) {
-			var name:String = 'icons/' + char;
+			var name:String = 'icons/psych/' + char;
 			if(!Paths.fileExists('images/' + name + '.png', IMAGE)) name = 'icons/icon-' + char; //Older versions of psych engine's support
 			if(!Paths.fileExists('images/' + name + '.png', IMAGE)) name = 'icons/icon-face'; //Prevents crash from missing icon
 			var file:Dynamic = Paths.image(name);
