@@ -33,8 +33,8 @@ class HealthIcon extends FlxSprite
 	{
 		super();
 		var name:String = 'icons/psych/' + char;
-		trace('images/icons/psych/icon-' + char);
-		trace('images/icons/psych/' + char);
+		//trace('images/icons/psych/icon-' + char);
+		//trace('images/icons/psych/' + char);
 		if(Paths.fileExists('images/' + name + '.png', IMAGE)){ //later versions of psych icon support
 			trace('we are dealing with an old psych icon. do the routine. | images/' + name + '.png');
 			isOldIcon = (char == 'bf-old');
@@ -56,6 +56,7 @@ class HealthIcon extends FlxSprite
 
 			antialiasing = true;
 			animation.add('bf', [0, 1], 0, false, isPlayer);
+			animation.add('bf-mii', [0, 1], 0, false, isPlayer);
 			animation.add('bf-car', [0, 1], 0, false, isPlayer);
 			animation.add('bf-christmas', [0, 1], 0, false, isPlayer);
 			animation.add('bf-fnf-switch', [0, 1], 0, false, isPlayer);
