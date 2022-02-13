@@ -2101,10 +2101,13 @@ class PlayState extends MusicBeatState
 		//	} else {noteTypeCheck = SONG.noteStyle;}
 		// made it more understandable so its more easier for me
 
-			noteTypeCheck = SONG.noteStyle;
+			//noteTypeCheck = SONG.noteStyle; //sets to null. so lets just comment it out.
+			if (SONG.noteStyle != null) noteTypeCheck = SONG.noteStyle;
 
 			if (isPixelStage)
 				noteTypeCheck = 'pixel';
+
+			trace(noteTypeCheck);
 
 			switch (noteTypeCheck)
 			{
@@ -4391,7 +4394,7 @@ class PlayState extends MusicBeatState
 						spr.animation.play('static');
 					
 				//	trace(isPixelStage);
-					trace(spr.animation.curAnim);
+				//	trace(spr.animation.curAnim);
 
 					if (spr.animation.curAnim.name == 'confirm' && !isPixelStage)
 					{
@@ -5121,10 +5124,8 @@ var isbf4:Bool = false;
 	var lightningOffset:Int = 8;
 
 	public function reloadHealthBarColors() {
-		var dadC = FlxColor.fromInt(CoolUtil.dominantColor(iconP1));
-		var bfC = FlxColor.fromInt(CoolUtil.dominantColor(iconP2));
-
-		healthBar.createFilledBar(dadC, bfC); healthBar.updateBar();
+		healthBar.createFilledBar(FlxColor.fromInt(CoolUtil.dominantColor(iconP1)), FlxColor.fromInt(CoolUtil.dominantColor(iconP2))); 
+		healthBar.updateBar();
 	}
 
 	override function beatHit()
