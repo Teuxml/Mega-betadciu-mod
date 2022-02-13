@@ -241,6 +241,13 @@ class Paths
 		return getPath('images/$key.png', IMAGE, library);
 	}
 
+	inline static public function psychImage(key:String, ?library:String):FlxGraphic
+	{
+		// streamlined the assets process more
+		var returnAsset:FlxGraphic = returnGraphic(key, library);
+		return returnAsset;
+	}
+
 	inline static public function font(key:String)
 	{
 		return 'assets/fonts/$key';
