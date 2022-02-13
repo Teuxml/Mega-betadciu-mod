@@ -145,6 +145,9 @@ class Note extends FlxSprite
 
 		noteTypeCheck = PlayState.SONG.noteStyle;
 
+		if (PlayState.instance.isPixelStage)
+			noteTypeCheck = 'pixel';
+
 		switch (noteTypeCheck)
 		{
 			case 'pixel':

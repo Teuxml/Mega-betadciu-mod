@@ -2103,6 +2103,9 @@ class PlayState extends MusicBeatState
 
 			noteTypeCheck = SONG.noteStyle;
 
+			if (isPixelStage)
+				noteTypeCheck = 'pixel';
+
 			switch (noteTypeCheck)
 			{
 				case 'pixel':
@@ -2287,7 +2290,7 @@ class PlayState extends MusicBeatState
 				
 					case 'normal':
 						{
-							babyArrow.frames = Paths.getSparrowAtlas('extrakey_note_assets');
+							babyArrow.frames = Paths.getSparrowAtlas('noteassets/shaggy/NOTE_assets', 'shared');
 							babyArrow.animation.addByPrefix('green', 'arrowUP');
 							babyArrow.animation.addByPrefix('blue', 'arrowDOWN');
 							babyArrow.animation.addByPrefix('purple', 'arrowLEFT');
@@ -4387,7 +4390,9 @@ class PlayState extends MusicBeatState
 					if (!holdArray[spr.ID])
 						spr.animation.play('static');
 					
-		 
+				//	trace(isPixelStage);
+					trace(spr.animation.curAnim);
+
 					if (spr.animation.curAnim.name == 'confirm' && !isPixelStage)
 					{
 						spr.centerOffsets();

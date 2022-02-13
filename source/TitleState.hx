@@ -332,6 +332,8 @@ class TitleState extends MusicBeatState
 					}
 					else
 					{
+						trace('ok, then u are on the right version!');
+						trace('what is the data u ask? ' + returnedData[0] + ' | ' + returnedData[1]);
 						FlxG.switchState(new MainMenuState());
 					}
 				}
