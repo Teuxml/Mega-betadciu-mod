@@ -169,7 +169,7 @@ class HscriptShit //funni modcharts
         interp.variables.set("crochet", Conductor.crochet);
         interp.variables.set("bpm", Conductor.bpm);
         interp.variables.set("HealthIcon", HealthIcon);
-        interp.variables.set("NoteSplash", NoteSplash);
+    //    interp.variables.set("NoteSplash", NoteSplash);
         interp.variables.set("Std", Std);
         interp.variables.set("Paths", Paths);
         interp.variables.set("WiggleEffect", WiggleEffect);
