@@ -1743,6 +1743,35 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 
+			case 'matthurt2':
+				//noteSkin = 'mattangry';
+				tex = Paths.getSparrowAtlas('characters/matt_hurt2','shared');
+				frames = tex;
+			//	iconColor = 'FFffab5e';
+				animation.addByPrefix('idle', 'Idle', 24);
+				animation.addByPrefix('singUP', 'Up', 24, false);
+				animation.addByPrefix('singDOWN', 'Down', 24, false);
+				animation.addByPrefix('singLEFT', 'Left', 24, false);
+				animation.addByPrefix('singRIGHT', 'Right', 24, false);
+	
+				animation.addByPrefix('singUP-alt', 'AltUp', 24, false);
+	
+				animation.addByPrefix('singDOWN-alt', 'AltDown', 24, false);
+				animation.addByPrefix('singLEFT-alt', 'AltLeft', 24, false);
+				animation.addByPrefix('singRIGHT-alt', 'AltRight', 24, false);
+	
+				addOffset('idle');
+				addOffset("singUP", -47, 24);
+				addOffset("singRIGHT", -1, -23);
+				addOffset("singLEFT", -30, 16);
+				addOffset("singDOWN", -31, -29);
+				addOffset("singUP-alt", -47, 24);
+				addOffset("singRIGHT-alt", -1, -24);
+				addOffset("singLEFT-alt", -30, 15);
+				addOffset("singDOWN-alt", -30, -27);
+	
+				playAnim('idle');
+
 			case 'matt':
 				tex = Paths.getSparrowAtlas('characters/matt_assets');
 				frames = tex;
