@@ -1026,7 +1026,7 @@ class PlayState extends MusicBeatState
 		boyfriend = new Boyfriend(770, 450, SONG.player1);
 		call("characterMade", [boyfriend]);
 
-		switch (songLowerCase)
+		switch (SONG.song.toLowerCase())
 		{
 			default:
 				if (isdad2) dad2 = new Character(300, 100, 'dad');
