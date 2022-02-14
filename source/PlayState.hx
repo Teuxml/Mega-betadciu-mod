@@ -800,6 +800,54 @@ class PlayState extends MusicBeatState
 						stageCurtains.scrollFactor.set(1.3, 1.3);
 						stageCurtains.active = false;
 						add(stageCurtains);
+			case 'green-hills':
+
+				#if windows
+				var luaModchartS:ModchartState = null;
+				{
+					luaModchartS = ModchartState.createModchartState();
+					luaModchartS.executeState('stage',['psychEngine']);
+				}
+				
+				luaModchartS.makeLuaSprite('sky', 'beachhouse/sky', -600, -400);
+				luaModchartS.setLuaSpriteScrollFactor('forest', 1, 1);
+				luaModchartS.scaleObject('sky', 3, 3);
+
+				luaModchartS.makeLuaSprite('forest', 'beachhouse/forest', -300, -390);
+				luaModchartS.setLuaSpriteScrollFactor('forest', .7, .7);
+				luaModchartS.scaleObject('forest', 0.6, 0.6);
+
+    			luaModchartS.makeAnimatedLuaSprite('glitch1', 'beachhouse/glitch1', -240, -280);
+    			luaModchartS.addAnimationByPrefix('glitch1', 'Symbol 1', 'Symbol 1', 24);
+    			luaModchartS.setLuaSpriteScrollFactor('glitch1', 1, 1);
+    			luaModchartS.scaleObject('glitch1', 1, 1);
+
+				luaModchartS.makeLuaSprite('sandfloor', 'beachhouse/sandfloor', -600, -475);
+				luaModchartS.setLuaSpriteScrollFactor('sandfloor', 1, 1);
+				luaModchartS.scaleObject('sandfloor', .6, .6);
+
+				luaModchartS.makeLuaSprite('tree', 'beachhouse/tree', -600, -370);
+				luaModchartS.setLuaSpriteScrollFactor('tree', .9, .9);
+				luaModchartS.scaleObject('tree', .7, .7);
+
+				luaModchartS.makeLuaSprite('water', 'beachhouse/water', -700, 520);
+				luaModchartS.setLuaSpriteScrollFactor('water', 1, 1);
+				luaModchartS.scaleObject('water', .7, .6);
+	
+	
+				luaModchartS.makeAnimatedLuaSprite('glitch', 'static', -600, -300);
+				luaModchartS.scaleObject('glitch', 2, 2);
+				luaModchartS.addAnimationByPrefix('glitch', 'glitchout', 'static glitch', 24, true);
+				luaModchartS.objectPlayAnimation('glitch', 'glitchout');
+	
+				luaModchartS.addLuaSprite('sky', false);
+				luaModchartS.addLuaSprite('forest', false);
+    			luaModchartS.addLuaSprite('glitch1', false);
+				luaModchartS.addLuaSprite('sandfloor', false);
+				luaModchartS.addLuaSprite('tree', false);
+				luaModchartS.addLuaSprite('water', false);
+				luaModchartS.addLuaSprite('glitch', true);
+				#end
 			default:
 				isPsychStage = true;
 
@@ -822,6 +870,15 @@ class PlayState extends MusicBeatState
 				opponent: [100, 100]
 			};
 		}
+
+		#if windows
+		var luaModchartS:ModchartState = null;
+		{
+			luaModchartS = ModchartState.createModchartState();
+			luaModchartS.executeState('stage',['psychEngine']);
+		}
+		#end
+
 		}
 		}
 
