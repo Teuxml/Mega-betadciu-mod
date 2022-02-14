@@ -243,7 +243,7 @@ class ModchartState
 
 	//Kade why tf is it not like in PlayState???
 
-	function changeGFCharacter(id:String, x:Float, y:Float, fix:Bool)
+	public static function changeGFCharacter(id:String, x:Float, y:Float, fix:Bool)
 	{		
 					PlayState.instance.removeObject(PlayState.gf);
 					//PlayState.gf = new Character(x, y, null);
@@ -260,7 +260,7 @@ class ModchartState
 					}
 	}
 
-	function changeDadCharacter(id:String, x:Float, y:Float)
+	public static function changeDadCharacter(id:String, x:Float, y:Float)
 	{		
 		PlayState.instance.removeObject(PlayState.dad);
 		//PlayState.dad = new Character(x, y, null);
@@ -272,7 +272,7 @@ class ModchartState
 		PlayState.instance.reloadHealthBarColors();
 	}
 
-	function changeBoyfriendCharacter(id:String, x:Float, y:Float)
+	public static function changeBoyfriendCharacter(id:String, x:Float, y:Float)
 	{							
 					PlayState.instance.removeObject(PlayState.boyfriend);
 					//PlayState.boyfriend = new Boyfriend(x, y, null);
@@ -285,7 +285,7 @@ class ModchartState
 	}
 
 	// this is better. easier to port shit from playstate.
-	function changeGFCharacterBetter(x:Float, y:Float, id:String)
+	public static function changeGFCharacterBetter(x:Float, y:Float, id:String)
 	{		
 					PlayState.instance.removeObject(PlayState.gf);
 					//PlayState.gf = new Character(x, y, null);
@@ -295,7 +295,7 @@ class ModchartState
 					PlayState.instance.addObject(PlayState.gf);
 	}
 
-	function changeDadCharacterBetter(x:Float, y:Float, id:String)
+	public static function changeDadCharacterBetter(x:Float, y:Float, id:String)
 	{		
 					PlayState.instance.removeObject(PlayState.dad);
 					//PlayState.dad = new Character(x, y, null);
@@ -305,7 +305,7 @@ class ModchartState
 					PlayState.instance.iconP2.animation.play(id);
 					PlayState.instance.reloadHealthBarColors();
 	}
-	function changeDad2CharacterBetter(x:Float, y:Float, id:String)
+	public static function changeDad2CharacterBetter(x:Float, y:Float, id:String)
 		{		
 			PlayState.instance.removeObject(PlayState.dad2);
 			//PlayState.dad = new Character(x, y, null);
@@ -315,7 +315,7 @@ class ModchartState
 					//	PlayState.instance.iconP2.animation.play(id);
 		}
 	
-	function changeDad3CharacterBetter(x:Float, y:Float, id:String)
+		public static function changeDad3CharacterBetter(x:Float, y:Float, id:String)
 		{		
 						PlayState.instance.removeObject(PlayState.dad3);
 						//PlayState.dad = new Character(x, y, null);
@@ -325,7 +325,7 @@ class ModchartState
 				//		PlayState.instance.iconP2.animation.play(id);
 		}
 	
-	function changeDad4CharacterBetter(x:Float, y:Float, id:String)
+		public static function changeDad4CharacterBetter(x:Float, y:Float, id:String)
 		{		
 						PlayState.instance.removeObject(PlayState.dad4);
 						//PlayState.dad = new Character(x, y, null);
@@ -335,7 +335,7 @@ class ModchartState
 				//		PlayState.instance.iconP2.animation.play(id);
 		}
 	
-	function changeBoyfriendCharacterBetter(x:Float, y:Float, id:String)
+		public static function changeBoyfriendCharacterBetter(x:Float, y:Float, id:String)
 		{		
 						PlayState.instance.removeObject(PlayState.boyfriend);
 						//PlayState.boyfriend = new Character(x, y, null);
@@ -345,7 +345,7 @@ class ModchartState
 						PlayState.instance.iconP2.animation.play(id);
 						PlayState.instance.reloadHealthBarColors();
 		}
-		function changeBoyfriend2CharacterBetter(x:Float, y:Float, id:String)
+		public static function changeBoyfriend2CharacterBetter(x:Float, y:Float, id:String)
 			{		
 							PlayState.instance.removeObject(PlayState.bf2);
 							//PlayState.boyfriend = new Character(x, y, null);
@@ -355,7 +355,7 @@ class ModchartState
 					//		PlayState.instance.iconP2.animation.play(id);
 			}
 		
-		function changeBoyfriend3CharacterBetter(x:Float, y:Float, id:String)
+			public static function changeBoyfriend3CharacterBetter(x:Float, y:Float, id:String)
 			{		
 							PlayState.instance.removeObject(PlayState.bf3);
 							//PlayState.boyfriend = new Character(x, y, null);
@@ -365,7 +365,7 @@ class ModchartState
 					//		PlayState.instance.iconP2.animation.play(id);
 			}
 		
-		function changeBoyfriend4CharacterBetter(x:Float, y:Float, id:String)
+			public static function changeBoyfriend4CharacterBetter(x:Float, y:Float, id:String)
 			{		
 							PlayState.instance.removeObject(PlayState.bf4);
 							//PlayState.boyfriend = new Character(x, y, null);
