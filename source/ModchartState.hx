@@ -1241,7 +1241,7 @@ class ModchartState
 	public function setPsychLuaSpriteScrollFactor(tag:String, scrollX:Float, scrollY:Float)
 	{
 		trace("setPsychLuaSpriteScrollFactor is deprecated! Use setScrollFactor instead", false, true);
-		Application.current.window.alert("setPsychLuaSpriteScrollFactor is deprecated! Use setScrollFactor instead", "setPsychLuaSpriteScrollFactor is deprecated!");
+		//Application.current.window.alert("setPsychLuaSpriteScrollFactor is deprecated! Use setScrollFactor instead", "setPsychLuaSpriteScrollFactor is deprecated!");
 		if(PlayState.instance.modchartSprites.exists(tag)) {
 			PlayState.instance.modchartSprites.get(tag).scrollFactor.set(scrollX, scrollY);
 		}
