@@ -1121,14 +1121,20 @@ class PlayState extends MusicBeatState
 		switch (SONG.song.toLowerCase())
 		{
 			default:
-				if (isdad2) dad2 = new Character(300, 100, 'dad');
-				if (isdad3) dad3 = new Character(300, 100, 'dad');
-				if (isdad4) dad4 = new Character(300, 100, 'dad');
-				if (isbf2)   bf2 = new Character(300, 100, 'bf');
-				if (isbf3)   bf3 = new Character(300, 100, 'bf');
-				if (isbf4)   bf4 = new Character(300, 100, 'bf');
-		}
+				if (isdad2) dad2 = new Character(280, 90, 'dad');
+				if (isdad3) dad3 = new Character(-220, 150, 'dad');
+				if (isdad4) dad4 = new Character(350, 380, 'dad');
+				if (isbf2)   bf2 = new Character(950, 500, 'bf');
+				if (isbf3)   bf3 = new Character(1150, 450, 'bf');
+				if (isbf4)   bf4 = new Character(600, 500, 'bf');
 
+				if (isdad2) dad2.visible = false;
+				if (isdad3) dad3.visible = false;
+				if (isdad4) dad4.visible = false;
+				if (isbf2)   bf2.visible = false;
+				if (isbf3)   bf3.visible = false;
+				if (isbf4)   bf4.visible = false;
+		}
 		// REPOSITIONING PER STAGE
 		switch (curStage)
 		{
@@ -5254,7 +5260,7 @@ var isbf4:Bool = false;
        			case 512: 
             		ModchartState.changeDadCharacter('shaggy', PlayState.instance.DAD_X, PlayState.instance.DAD_Y);
         		case 629: 
-					ModchartState.changeBoyfriendCharacter('qt-kb', PlayState.instance.BF_X, PlayState.instance.BF_Y);
+					ModchartState.changeBoyfriendCharacter('qt-kb-both', PlayState.instance.BF_X, PlayState.instance.BF_Y);
        			case 832:
            			ModchartState.changeDadCharacter('whitty', PlayState.instance.DAD_X, PlayState.instance.DAD_Y);
         		case 959:

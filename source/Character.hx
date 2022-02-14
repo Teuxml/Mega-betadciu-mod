@@ -228,6 +228,19 @@ class Character extends FlxSprite
 
 				playAnim('danceRight');
 
+			case 'gf-mii':
+					tex = Paths.getSparrowAtlas('characters/GF_MII_assets', 'shared');
+					frames = tex;
+					animation.addByIndices('sad', 'gf sad', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "", 24, false);
+					animation.addByIndices('danceLeft', 'GF Dancing Beat', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
+					animation.addByIndices('danceRight', 'GF Dancing Beat', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
+	
+					addOffset('sad', -2, -2);
+					addOffset('danceLeft', 0, -9);
+					addOffset('danceRight', 0, -9);
+	
+					playAnim('danceRight');
+
 			case 'cj-tied':
 				// GIRLFRIEND CODE
 				tex = Paths.getSparrowAtlas('characters/cj_tied');
@@ -6903,7 +6916,7 @@ class Character extends FlxSprite
 				playAnim('idle');
 
 			case 'piconjo':
-				tex = Paths.getSparrowAtlas('characters/Piconjo_Assets');
+				tex = Paths.getSparrowAtlas('characters/Piconjo_Assets', 'shared');
 				frames = tex;
 				animation.addByPrefix('idle', 'monster idle', 24, false);
 				animation.addByPrefix('singUP', 'monster up note', 24, false);
@@ -6931,7 +6944,7 @@ class Character extends FlxSprite
 				playAnim('idle');
 			
 			case 'anchor-bowl':
-				tex = Paths.getSparrowAtlas('characters/anchorBowlAssets');
+				tex = Paths.getSparrowAtlas('characters/anchorBowlAssets', 'shared');
 
 				frames = tex;
 
@@ -6964,7 +6977,7 @@ class Character extends FlxSprite
 				updateHitbox();
 
 			case 'cablecrow':
-				tex = Paths.getSparrowAtlas('characters/Cablecrow');
+				tex = Paths.getSparrowAtlas('characters/Cablecrow', 'shared');
 				frames = tex;
 				animation.addByPrefix('idle', 'Idle', 14);
 				animation.addByPrefix('singUP', 'Sing Up', 24);
@@ -6981,7 +6994,7 @@ class Character extends FlxSprite
 				playAnim('idle');
 
 			case 'qt-kb':
-				frames =  Paths.getSparrowAtlas('characters/qt-kb');
+				frames =  Paths.getSparrowAtlas('characters/qt-kb', 'shared');
 
 				animation.addByPrefix('danceRight', "danceRightNormal", 26, false);
 				animation.addByPrefix('danceLeft', "danceLeftNormal", 26, false);
@@ -7010,7 +7023,7 @@ class Character extends FlxSprite
 				addOffset("singRIGHT-alt", -158, -178);	
 
 			case 'qt-kb-both':
-				frames = Paths.getSparrowAtlas('characters/qt-kb-both');
+				frames = Paths.getSparrowAtlas('characters/qt-kb-both', 'shared');
 
 				animation.addByPrefix('danceRight', "danceRightNormal", 26, false);
 				animation.addByPrefix('danceLeft', "danceLeftNormal", 26, false);
@@ -7029,7 +7042,7 @@ class Character extends FlxSprite
 				addOffset("singRIGHT", -163, -172);	
 
 			case 'exe':
-				frames = Paths.getSparrowAtlas('characters/ExeAssets');
+				frames = Paths.getSparrowAtlas('characters/ExeAssets', 'shared');
 
 				animation.addByPrefix('idle', 'SONICmoveIDLE', 24, false);
 				animation.addByPrefix('singUP', 'SONICmoveUP', 24, false);
@@ -7060,7 +7073,7 @@ class Character extends FlxSprite
 				playAnim('idle');
 
 			case 'maijin':
-				frames = Paths.getSparrowAtlas('characters/MaijinAssets');
+				frames = Paths.getSparrowAtlas('characters/MaijinAssets', 'shared');
 
 				animation.addByPrefix('idle', 'SONICFUNIDLE', 24, false);
 				animation.addByPrefix('singUP', 'SONICFUNUP', 24, false);
