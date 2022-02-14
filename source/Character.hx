@@ -4628,6 +4628,29 @@ class Character extends FlxSprite
 				addOffset("singDOWN", 0, -30);
 
 				playAnim('idle');
+			case 'rshaggy':
+				// 	RSHAGGY ANIMATION LOADING CODE
+				tex = Paths.getSparrowAtlas('characters/shaggy_red', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle2', 'shaggy_idle2', 30);
+				animation.addByPrefix('idle', 'shaggy_idle0', 30);
+				animation.addByPrefix('singUP', 'shaggy_up', 30);
+				animation.addByPrefix('singRIGHT', 'shaggy_right', 30);
+				animation.addByPrefix('singDOWN', 'shaggy_down', 30); //god why does sshaggy have so many animations
+				animation.addByPrefix('singLEFT', 'shaggy_left', 30);
+
+				animation.addByPrefix('standUP', 'shaggy_stand0', 30);
+				animation.addByPrefix('sit', 'shaggy_sit0', 30);
+
+				addOffset('idle');
+				addOffset("idle2", -1, 0);
+				addOffset("singUP", -16, 27);
+				addOffset("singRIGHT", -1, -43);
+				addOffset("singLEFT", 165, -114);
+				addOffset("singDOWN", -10, -160);
+
+				addOffset("sit", 29, -218);
+				addOffset("standUP", 33, 0);
 			case 'bonziBuddy':
 				// DAD ANIMATION LOADING CODE
 				tex = Paths.getSparrowAtlas('characters/bonzi_assets', 'shared');
@@ -7063,6 +7086,108 @@ class Character extends FlxSprite
 				}		
 	
 				playAnim('idle');
+			//just realized after i forgot cheeky
+
+			case 'cheeky':
+				tex = Paths.getSparrowAtlas('characters/Cheeky', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'Cheeky Idle Dance', 24);
+				animation.addByPrefix('singUP', 'Cheeky NOTE UP', 24);
+				animation.addByPrefix('singRIGHT', 'Cheeky NOTE RIGHT', 24);
+				animation.addByPrefix('singDOWN', 'Cheeky NOTE DOWN', 24);
+				animation.addByPrefix('singLEFT', 'Cheeky NOTE LEFT', 24);
+
+				addOffset('idle', -21, -8);
+				addOffset("singUP", -21, 33);
+				addOffset("singRIGHT", -134, -20);
+				addOffset("singLEFT", 68, -30);
+				addOffset("singDOWN", -21, -68);
+
+				playAnim('idle');
+				//cheeky was hella small lmao
+				setGraphicSize(Std.int(width * 2));
+
+				flipX = false;
+
+			case 'cheekygun':
+				tex = Paths.getSparrowAtlas('characters/cheekgun', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'Cheeky Idle Dance', 24);
+				animation.addByPrefix('singUP', 'Cheeky NOTE UP', 24);
+				animation.addByPrefix('singRIGHT', 'Cheeky NOTE RIGHT', 24);
+				animation.addByPrefix('singDOWN', 'Cheeky NOTE DOWN', 24);
+				animation.addByPrefix('singLEFT', 'Cheeky NOTE LEFT', 24);
+	
+				//Gun Mechanic
+				animation.addByPrefix('ShootGun', 'Cheeky PEW PEW', 24);
+				addOffset("singLEFT", 303, -20);
+	
+				addOffset('idle', -21, -8);
+				addOffset("singUP", -21, 43);
+				addOffset("singRIGHT", 36, -30);
+				addOffset("singLEFT", 303, -20);
+				addOffset("singDOWN", -1, -58);
+	
+				playAnim('idle');
+				//cheeky was hella small lmao
+				setGraphicSize(Std.int(width * 2));
+	
+				flipX = false;
+			case 'crazycheeky':
+				tex = Paths.getSparrowAtlas('characters/cheeky_god', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'Cheeky Idle Dance', 24);
+				animation.addByPrefix('singUP', 'Cheeky NOTE UP', 24);
+				animation.addByPrefix('singRIGHT', 'Cheeky NOTE RIGHT', 24);
+				animation.addByPrefix('singDOWN', 'Cheeky NOTE DOWN', 24);
+				animation.addByPrefix('singLEFT', 'Cheeky NOTE LEFT', 24);
+	
+				addOffset('idle', -21, -8);
+				addOffset("singUP", -21, 33);
+				addOffset("singRIGHT", -134, -20);
+				addOffset("singLEFT", 68, -30);
+				addOffset("singDOWN", -21, -68);
+	
+				playAnim('idle');
+				//cheeky was hella small lmao
+				setGraphicSize(Std.int(width * 2));
+	
+				flipX = false;
+			case 'eggdickface': //why was he called this?
+				tex = Paths.getSparrowAtlas('characters/eggman_soul');
+				frames = tex;
+				animation.addByPrefix('idle', 'Eggman_Idle', 24);
+				animation.addByPrefix('singUP', 'Eggman_Up', 24);
+				animation.addByPrefix('singRIGHT', 'Eggman_Right', 24);
+				animation.addByPrefix('singDOWN', 'Eggman_Down', 24);
+				animation.addByPrefix('singLEFT', 'Eggman_Left', 24);
+				animation.addByPrefix('laugh', 'Eggman_Laugh', 35, false);
+
+				addOffset('idle', -5, 5);
+				addOffset("singUP", 110, 231);
+				addOffset("singRIGHT", 40, 174);
+				addOffset("singLEFT", 237, 97);
+				addOffset("singDOWN", 49, -95);
+				addOffset('laugh', -10, 210);
+
+				updateHitbox();
+			case 'sunky':
+				tex = Paths.getSparrowAtlas('characters/Sunky');
+				frames = tex;
+				animation.addByPrefix('idle', 'sunkyIDLE instance 1', 24);
+				animation.addByPrefix('singUP', 'sunkyUP instance 1', 24);
+				animation.addByPrefix('singRIGHT', 'sunkyRIGHT instance 1', 24);
+				animation.addByPrefix('singDOWN', 'sunkyDOWN instance 1', 24);
+				animation.addByPrefix('singLEFT', 'sunkyLEFT instance 1', 24);
+
+				addOffset('idle');
+				addOffset("singUP");
+				addOffset("singRIGHT");
+				addOffset("singLEFT");
+				addOffset("singDOWN");
+
+				playAnim('idle');
+
 			default:
 				isPsychFile = true;
 				var characterPath:String = 'characters/' + curCharacter + '.json';
