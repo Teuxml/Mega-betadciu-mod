@@ -102,6 +102,9 @@ class KadeEngineData
 
 		if (FlxG.save.data.globalAntialiasing = null)
 			FlxG.save.data.globalAntialiasing = true;
+
+		if (FlxG.save.data.noteSplash == null)
+			FlxG.save.data.noteSplash = true;
 		
 		var gamepad:FlxGamepad = FlxG.gamepads.lastActive;
 		
