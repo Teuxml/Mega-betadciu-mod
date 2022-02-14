@@ -262,13 +262,14 @@ class ModchartState
 
 	function changeDadCharacter(id:String, x:Float, y:Float)
 	{		
-					PlayState.instance.removeObject(PlayState.dad);
-					//PlayState.dad = new Character(x, y, null);
-					PlayState.instance.destroyObject(PlayState.dad);
-					PlayState.dad = new Character(x, y, id);
-					PlayState.instance.addObject(PlayState.dad);
-					PlayState.instance.iconP2.animation.play(id);
-					PlayState.instance.reloadHealthBarColors();
+		PlayState.instance.removeObject(PlayState.dad);
+		//PlayState.dad = new Character(x, y, null);
+		PlayState.instance.destroyObject(PlayState.dad);
+		PlayState.dad = new Character(x, y, id);
+		PlayState.instance.addObject(PlayState.dad);
+		//PlayState.instance.iconP2.animation.play(id);
+		PlayState.instance.iconP2.modChartChangeIcon();
+		PlayState.instance.reloadHealthBarColors();
 	}
 
 	function changeBoyfriendCharacter(id:String, x:Float, y:Float)
@@ -278,7 +279,8 @@ class ModchartState
 					PlayState.instance.destroyObject(PlayState.boyfriend);
 					PlayState.boyfriend = new Boyfriend(x, y, id);
 					PlayState.instance.addObject(PlayState.boyfriend);
-					PlayState.instance.iconP1.animation.play(id);
+					//PlayState.instance.iconP1.animation.play(id);
+					PlayState.instance.iconP1.modChartChangeIcon();
 					PlayState.instance.reloadHealthBarColors();
 	}
 
@@ -305,12 +307,12 @@ class ModchartState
 	}
 	function changeDad2CharacterBetter(x:Float, y:Float, id:String)
 		{		
-						PlayState.instance.removeObject(PlayState.dad2);
-						//PlayState.dad = new Character(x, y, null);
-						PlayState.instance.destroyObject(PlayState.dad2);
+			PlayState.instance.removeObject(PlayState.dad2);
+			//PlayState.dad = new Character(x, y, null);
+			PlayState.instance.destroyObject(PlayState.dad2);
 						PlayState.dad2 = new Character(x, y, id);
 						PlayState.instance.addObject(PlayState.dad2);
-						PlayState.instance.iconP2.animation.play(id);
+					//	PlayState.instance.iconP2.animation.play(id);
 		}
 	
 	function changeDad3CharacterBetter(x:Float, y:Float, id:String)
@@ -320,7 +322,7 @@ class ModchartState
 						PlayState.instance.destroyObject(PlayState.dad3);
 						PlayState.dad3 = new Character(x, y, id);
 						PlayState.instance.addObject(PlayState.dad3);
-						PlayState.instance.iconP2.animation.play(id);
+				//		PlayState.instance.iconP2.animation.play(id);
 		}
 	
 	function changeDad4CharacterBetter(x:Float, y:Float, id:String)
@@ -330,7 +332,7 @@ class ModchartState
 						PlayState.instance.destroyObject(PlayState.dad4);
 						PlayState.dad4 = new Character(x, y, id);
 						PlayState.instance.addObject(PlayState.dad4);
-						PlayState.instance.iconP2.animation.play(id);
+				//		PlayState.instance.iconP2.animation.play(id);
 		}
 	
 	function changeBoyfriendCharacterBetter(x:Float, y:Float, id:String)
@@ -350,7 +352,7 @@ class ModchartState
 							PlayState.instance.destroyObject(PlayState.bf2);
 							PlayState.bf2 = new Character(x, y, id);
 							PlayState.instance.addObject(PlayState.bf2);
-							PlayState.instance.iconP2.animation.play(id);
+					//		PlayState.instance.iconP2.animation.play(id);
 			}
 		
 		function changeBoyfriend3CharacterBetter(x:Float, y:Float, id:String)
@@ -360,7 +362,7 @@ class ModchartState
 							PlayState.instance.destroyObject(PlayState.bf3);
 							PlayState.bf3 = new Character(x, y, id);
 							PlayState.instance.addObject(PlayState.bf3);
-							PlayState.instance.iconP2.animation.play(id);
+					//		PlayState.instance.iconP2.animation.play(id);
 			}
 		
 		function changeBoyfriend4CharacterBetter(x:Float, y:Float, id:String)
@@ -370,7 +372,7 @@ class ModchartState
 							PlayState.instance.destroyObject(PlayState.bf4);
 							PlayState.bf4 = new Character(x, y, id);
 							PlayState.instance.addObject(PlayState.bf4);
-							PlayState.instance.iconP2.animation.play(id);
+					//		PlayState.instance.iconP2.animation.play(id);
 			}
 
 	function tweenFadeInAndOut(id:String, time:Float, delayTime:Float, time2:Float)

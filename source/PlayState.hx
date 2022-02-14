@@ -450,7 +450,7 @@ class PlayState extends MusicBeatState
 				isPixelStage = false;
 		}
 
-		if (stageCheck == null) {
+		if (stageCheck == 'stage' && storyWeek != 1) {
 		switch (SONG.song.toLowerCase())
 		{
 			case 'purgatory':
@@ -476,6 +476,10 @@ class PlayState extends MusicBeatState
 
                 defaultCamZoom = 0.7;
 				curStage = 'volcano';
+				isbf2 = true;
+				isbf3 = true;
+				isdad2 = true;
+				isdad3 = true;
 			case 'halloween': 
 				curStage = 'spooky';
 				halloweenLevel = true;
@@ -1117,23 +1121,23 @@ class PlayState extends MusicBeatState
 	*/
 			if (curSong == 'South')
 			{
-				add(dad2);
-				add(bf2);
+			//	add(dad2);
+			//	add(bf2);
 			}
 
-			/*if (dad2 == true)
+			if (isdad2 == true)
 				add(dad2);
-			if (dad3 == true)
+			if (isdad3 == true)
 				add(dad3);
-			if (dad4 == true)
+			if (isdad4 == true)
 				add(dad4);
 
-			if (bf2 == true)
+			if (isbf2 == true)
 				add(bf2);
-			if (bf3 == true)
+			if (isbf3 == true)
 				add(bf3);
-			if (bf4 == true)
-				add(bf4);*/
+			if (isbf4 == true)
+				add(bf4);
 
 			add(dad);
 			add(boyfriend);
@@ -5152,6 +5156,68 @@ var isbf4:Bool = false;
 		}
 		#end
 
+		if (SONG.song.toLowerCase() == 'purgatory')
+		{
+			switch (step)
+   			{
+       			case 512: 
+            		ModchartState.changeDadCharacter('shaggy', PlayState.instance.dad.x, PlayState.instance.dad.y);
+        		case 629: 
+					ModchartState.changeBoyfriendCharacter('qt-kb', PlayState.instance.boyfriend.x, PlayState.instance.boyfriend.y);
+       			case 832:
+           			ModchartState.changeDadCharacter('whitty', PlayState.instance.dad.x, PlayState.instance.dad.y);
+        		case 959:
+            		ModchartState.changeBoyfriendCharacter('tankman', PlayState.instance.boyfriend.x, PlayState.instance.boyfriend.y);
+        		case 1087:
+            		ModchartState.changeDadCharacter('shaggy', PlayState.instance.dad.x, PlayState.instance.dad.y);
+				case 1215:
+					ModchartState.changeBoyfriendCharacter('tabi', PlayState.instance.boyfriend.x, PlayState.instance.boyfriend.y);
+				case 1343:
+					ModchartState.changeDadCharacter('shaggy', PlayState.instance.dad.x, PlayState.instance.dad.y);
+				case 1984: //heyyyy, i was born this year. jkkkkkkkkkkkk //cheeky turn
+					ModchartState.changeBoyfriendCharacter('cheeky', PlayState.instance.boyfriend.x, PlayState.instance.boyfriend.y);
+				case 2112: 
+					ModchartState.changeDadCharacter('bob', PlayState.instance.dad.x, PlayState.instance.dad.y);
+				case 2239:
+					ModchartState.changeBoyfriendCharacter('dave', PlayState.instance.boyfriend.x, PlayState.instance.boyfriend.y);
+				case 2624:
+					dad2.visible = true;
+					ModchartState.changeDadCharacter('nonsense', PlayState.instance.dad.x, PlayState.instance.dad.y);
+					ModchartState.changeDad2CharacterBetter(PlayState.instance.dad.x, PlayState.instance.dad.y, 'sarvente');
+				case 2751:
+					bf2.visible = true;
+					ModchartState.changeBoyfriendCharacter('bambi', PlayState.instance.dad.x, PlayState.instance.dad.y);
+					ModchartState.changeBoyfriend2CharacterBetter(PlayState.instance.dad.x, PlayState.instance.dad.y, 'ruv');
+				case 2880:
+					ModchartState.changeDadCharacter('selever', PlayState.instance.dad.x, PlayState.instance.dad.y);
+					ModchartState.changeDad2CharacterBetter(PlayState.instance.dad.x, PlayState.instance.dad.y, 'exe');
+				case 3008:
+					ModchartState.changeBoyfriendCharacter('ron', PlayState.instance.dad.x, PlayState.instance.dad.y);
+					ModchartState.changeBoyfriend2CharacterBetter(PlayState.instance.dad.x, PlayState.instance.dad.y, 'garcello');
+				case 3136: 
+					ModchartState.changeDadCharacter('sans', PlayState.instance.dad.x, PlayState.instance.dad.y);
+					ModchartState.changeDad2CharacterBetter(PlayState.instance.dad.x, PlayState.instance.dad.y, 'eggdickface'); //eggman
+				case 3712: 
+					dad3.visible = true;
+					ModchartState.changeDadCharacter('qt-kb-both', PlayState.instance.dad.x, PlayState.instance.dad.y);
+					ModchartState.changeDad2CharacterBetter(PlayState.instance.dad.x, PlayState.instance.dad.y, 'bf-gf');
+					ModchartState.changeDad3CharacterBetter(PlayState.instance.dad.x, PlayState.instance.dad.y, 'impostor');
+				case 3840: 
+					bf3.visible = true;
+					ModchartState.changeBoyfriendCharacter('hd-monika', PlayState.instance.dad.x, PlayState.instance.dad.y);
+					ModchartState.changeBoyfriend2CharacterBetter(PlayState.instance.dad.x, PlayState.instance.dad.y, 'tails');
+					ModchartState.changeBoyfriend2CharacterBetter(PlayState.instance.dad.x, PlayState.instance.dad.y, 'sunky'); //sunky
+				case 3968:
+					ModchartState.changeDadCharacter('baldi-angry', PlayState.instance.dad.x, PlayState.instance.dad.y);
+					ModchartState.changeDad2CharacterBetter(PlayState.instance.dad.x, PlayState.instance.dad.y, 'missingno');
+					ModchartState.changeDad3CharacterBetter(PlayState.instance.dad.x, PlayState.instance.dad.y, 'blantad'); //blantad
+				case 4096: 
+					ModchartState.changeBoyfriendCharacter('exgf', PlayState.instance.dad.x, PlayState.instance.dad.y); //ayana
+					ModchartState.changeBoyfriend2CharacterBetter(PlayState.instance.dad.x, PlayState.instance.dad.y, 'kapi');
+					ModchartState.changeBoyfriend2CharacterBetter(PlayState.instance.dad.x, PlayState.instance.dad.y, 'maijin');
+    		}
+		}
+
 		// yes this updates every step.
 		// yes this is bad
 		// but i'm doing it to update misses and accuracy
@@ -5171,7 +5237,7 @@ var isbf4:Bool = false;
 	public function reloadHealthBarColors() {
 		trace(FlxColor.fromInt(CoolUtil.dominantColor(iconP1)));
 		trace(FlxColor.fromInt(CoolUtil.dominantColor(iconP2)));
-		healthBar.createFilledBar(FlxColor.fromInt(CoolUtil.dominantColor(iconP1)), FlxColor.fromInt(CoolUtil.dominantColor(iconP2))); 
+		healthBar.createFilledBar(FlxColor.fromInt(CoolUtil.dominantColor(iconP2)), FlxColor.fromInt(CoolUtil.dominantColor(iconP1))); 
 		healthBar.updateBar();
 	}
 
