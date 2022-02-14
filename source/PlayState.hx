@@ -1125,18 +1125,18 @@ class PlayState extends MusicBeatState
 			//	add(bf2);
 			}
 
-			if (dad2 == true)
+			if (isdad2 == true)
 				add(dad2);
-			if (dad3 == true)
+			if (isdad3 == true)
 				add(dad3);
-			if (dad4 == true)
+			if (isdad4 == true)
 				add(dad4);
 
-			if (bf2 == true)
+			if (isbf2 == true)
 				add(bf2);
-			if (bf3 == true)
+			if (isbf3 == true)
 				add(bf3);
-			if (bf4 == true)
+			if (isbf4 == true)
 				add(bf4);
 
 			add(dad);
