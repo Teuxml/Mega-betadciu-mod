@@ -272,6 +272,7 @@ class ModchartState
 		//PlayState.instance.iconP2.animation.play(id);
 		PlayState.instance.iconP2.modChartChangeIcon();
 		PlayState.instance.reloadHealthBarColors();
+		//PlayState.instance.loadOffsets();
 	}
 
 	public static function changeBoyfriendCharacter(id:String, x:Float, y:Float)
@@ -485,7 +486,7 @@ class ModchartState
 
     // LUA SHIT
 
-    function new()
+    function new(isGeneratingStage = false)
     {
         		trace('opening a lua state (because we are cool :))');
 				lua = LuaL.newstate();
@@ -513,7 +514,7 @@ class ModchartState
 				}
 
 				// get some fukin globals up in here bois
-	
+				if (!isGeneratingStage)	{
 				setVar("difficulty", PlayState.storyDifficulty);
 				setVar("bpm", Conductor.bpm);
 				setVar("scrollspeed", FlxG.save.data.scrollSpeed != 1 ? FlxG.save.data.scrollSpeed : PlayState.SONG.speed);
@@ -560,6 +561,7 @@ class ModchartState
 				setVar("mustHit", false);
 
 				setVar("strumLineY", PlayState.instance.strumLine.y);
+				}
 				
 				// callbacks
 	
@@ -615,6 +617,7 @@ class ModchartState
 					FlxG.sound.play(Paths.sound(id));
 				});
 
+				if (!isGeneratingStage)	{
 				Lua_helper.add_callback(lua,"changeDadIcon", function(id:String) {
 					PlayState.instance.iconP2.animation.play(id);
 				});
@@ -1204,6 +1207,7 @@ class ModchartState
 					setVar("defaultStrum" + i + "Angle", Math.floor(member.angle));
 					trace("Adding strum" + i);
 				}
+			}
 
 				//dumb group dancer shit
 				// default strums
@@ -1214,9 +1218,9 @@ class ModchartState
         return Lua.tostring(lua,callLua(name, args));
     }
 
-    public static function createModchartState():ModchartState
+    public static function createModchartState(isGeneratingStage:Bool = false):ModchartState
     {
-        return new ModchartState();
+        return new ModchartState(isGeneratingStage);
     }
 
 	public function makePsychLuaSprite(tag:String, image:String, x:Float, y:Float)
@@ -1230,13 +1234,30 @@ class ModchartState
 		}
 		leSprite.antialiasing = FlxG.save.data.globalAntialiasing;
 		PlayState.instance.modchartSprites.set(tag, leSprite);
+		trace(PlayState.instance.modchartSprites);
 		leSprite.active = true;
 	}
 
 	public function setPsychLuaSpriteScrollFactor(tag:String, scrollX:Float, scrollY:Float)
 	{
-		trace("setLuaSpriteScrollFactor is deprecated! Use setScrollFactor instead", false, true);
-		PlayState.instance.modchartSprites.get(tag).scrollFactor.set(scrollX, scrollY);
+		trace("setPsychLuaSpriteScrollFactor is deprecated! Use setScrollFactor instead", false, true);
+		Application.current.window.alert("setPsychLuaSpriteScrollFactor is deprecated! Use setScrollFactor instead", "setPsychLuaSpriteScrollFactor is deprecated!");
+		if(PlayState.instance.modchartSprites.exists(tag)) {
+			PlayState.instance.modchartSprites.get(tag).scrollFactor.set(scrollX, scrollY);
+		}
+	}
+
+	public function setPsychScrollFactor(obj:String, scrollX:Float, scrollY:Float)
+	{
+		if(PlayState.instance.modchartSprites.exists(obj)) {
+			PlayState.instance.modchartSprites.get(obj).scrollFactor.set(scrollX, scrollY);
+			return;
+		}
+
+		var object:FlxObject = Reflect.getProperty(getInstance(), obj);
+		if(object != null) {
+			object.scrollFactor.set(scrollX, scrollY);
+		}
 	}
 
 	public function scalePsychObject(obj:String, x:Float, y:Float)
@@ -1283,27 +1304,28 @@ class ModchartState
 	public function addLuaSprite(tag:String, front:Bool = false)
 	{
 		var shit:FlxSprite = PlayState.instance.modchartSprites.get(tag);
-					if(front)
-					{
-						getInstance().add(shit);
-					}
-					else
-					{
-						if(PlayState.isDead)
-						{
-							GameOverSubstate.instance.insert(Std.int(GameOverSubstate.instance.bf.x), shit);
-						}
-						else
-						{
-							var position:Int = Std.int(PlayState.gf.x);
-							if(Std.int(PlayState.boyfriend.x) < position) {
-								position = Std.int(PlayState.boyfriend.x);
-							} else if(Std.int(PlayState.dad.x) < position) {
-								position = Std.int(PlayState.dad.x);
-							}
-							PlayState.instance.insert(position, shit);
-						}
-					}
+		if(front)
+		{
+			getInstance().add(shit);
+		}
+		else
+		{
+			if(PlayState.isDead)
+			{
+				GameOverSubstate.instance.insert(Std.int(GameOverSubstate.instance.bf.x), shit);
+			}
+			else
+			{
+				var position:Int = Std.int(PlayState.instance.GF_X);
+				if(Std.int(PlayState.instance.BF_X) < position) {
+					position = Std.int(PlayState.instance.BF_X);
+				} else if(Std.int(PlayState.instance.DAD_X) < position) {
+					position = Std.int(PlayState.instance.DAD_X);
+				}
+
+				PlayState.instance.insert(position, shit);
+			}
+		}
 			//		shit.isOnScreen = true;
 					//trace('added a thing: ' + tag);			
 	}

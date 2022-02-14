@@ -18,6 +18,7 @@ class Boyfriend extends Character
 
 	override function update(elapsed:Float)
 	{
+		try {
 		if (!debugMode)
 		{
 			if (animation.curAnim.name.startsWith('sing'))
@@ -35,9 +36,7 @@ class Boyfriend extends Character
 			if (animation.curAnim.name == 'firstDeath' && animation.curAnim.finished)
 			{
 				playAnim('deathLoop');
-			}
-		}
-
+			}}} catch (exception) {trace(exception);}
 		super.update(elapsed);
 	}
 }

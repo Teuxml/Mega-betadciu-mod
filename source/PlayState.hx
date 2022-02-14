@@ -497,7 +497,7 @@ class PlayState extends MusicBeatState
 			case 'volcano' | 'purgatory':
 				try {
 				var boxfloor:FlxSprite = new FlxSprite(-400, -200);
-				boxfloor.frames = Paths.getSparrowAtlas('volcanoanimated', 'purgatory');
+				boxfloor.frames = Paths.getSparrowAtlas('volcanoanimated', 'shared');
 				boxfloor.animation.addByPrefix('floorbang', "BUBBLE", 24);
 				boxfloor.animation.play('floorbang');
 				boxfloor.scrollFactor.set(0.9, 0.9);
@@ -804,12 +804,12 @@ class PlayState extends MusicBeatState
 						stageCurtains.scrollFactor.set(1.3, 1.3);
 						stageCurtains.active = false;
 						add(stageCurtains);
-			case 'green-hills':
+			case 'beachhouse':
 
 				#if windows
 				var luaModchartS:ModchartState = null;
 				{
-					luaModchartS = ModchartState.createModchartState();
+					luaModchartS = ModchartState.createModchartState(true);
 					luaModchartS.executeState('stage',['psychEngine']);
 				}
 				
@@ -5234,6 +5234,188 @@ var isbf4:Bool = false;
 		}
 	}
 
+	public function loadOffsets(character:String)
+	{
+		DAD_X = 100;
+		DAD_Y = 100;
+		switch (character)
+		{
+			case 'gf' | 'gf-crucified' | 'gf1' | 'gf2' | 'gf3' | 'gf4' | 'gf5':
+				dad.setPosition(GF_X, GF_Y);
+				gf.visible = false;
+				if (isStoryMode)
+				{
+					camFollow.x += 600;
+					tweenCamIn();
+				}
+			case "spooky" | "gura-amelia" | "sunday":
+				DAD_Y += 200;
+			case "mia" | 'mia-lookstraight' | 'mia-wire':
+				DAD_X += 100;
+				DAD_Y += 150;
+			case 'duet-sm':
+				DAD_X += 150;
+				DAD_Y += 380;
+				camFollow.setPosition(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case 'cj-ruby' | 'cj-ruby-both':
+				DAD_X -= 50;
+			case 'isa':
+				DAD_X += 20;
+				DAD_Y -= 50;
+				camFollow.setPosition(dad.getMidpoint().x + 170, dad.getMidpoint().y - 100);
+			case 'tordbot':
+				DAD_X += 330;
+				DAD_Y -= 1524.75;
+				camFollow.setPosition(391.2, -1094.15);
+			case "hex-virus" | "agoti-wire" | 'agoti-glitcher' | 'agoti-mad' | 'haachama':
+				DAD_Y += 100;
+			case "rebecca":
+				if (!curStage.contains('hungryhippo'))
+				{	
+					DAD_Y += 100;
+				}
+				camFollow.y += 500;
+				camFollow.setPosition(dad.getMidpoint().x + 150, dad.getMidpoint().y + 100);
+			case "whittyCrazy":
+				DAD_X -= 25;
+			case "tankman":
+				DAD_Y += 180;
+			case "sarvente-dark" | 'sarvente' | 'ruv':
+				DAD_Y -= 70;
+			case 'monster-christmas' | 'monster' | 'drunk-annie' | 'taki':
+				DAD_Y += 130;
+			case 'dad' | 'shaggy' | 'hd-senpai' | 'lila':
+				camFollow.x += 400;
+			case 'dad-mad':
+				DAD_X -= 30;
+				DAD_Y -= 10;
+				camFollow.x += 400;
+			case 'bf-blantad':
+				DAD_Y -= 75;
+			case 'pico' | 'annie-bw' | 'phil' | 'alya' | 'picoCrazy':
+				camFollow.x += 600;
+				DAD_Y += 300;
+				camFollow.setPosition(dad.getMidpoint().x + 150, dad.getMidpoint().y - 100);
+			case 'bob2' | 'peri':
+				DAD_Y += 50;
+			case 'bosip' | 'demoncass':
+				DAD_Y -= 50;
+			case 'botan':
+				DAD_Y += 185;
+				camFollow.setPosition(dad.getGraphicMidpoint().x, dad.getMidpoint().y);
+			case 'neko-crazy':
+                DAD_X -= 50;
+                DAD_Y += 230;
+                camFollow.setPosition(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case 'kou' | 'nene' | 'liz' | 'bf-annie' | 'bf-carol':
+				camFollow.x += 600;
+				DAD_Y += 300;
+			case 'bf' | 'bf-frisk' | 'bf-gf':
+				camFollow.x += 600;
+				DAD_Y += 350;
+			case 'parents-christmas' | 'parents-christmas-soft':
+				DAD_X -= 500;
+			case 'bico-christmas':
+				DAD_X -= 500;
+				DAD_Y += 100;
+			case 'senpai' | 'monika' | 'senpai-angry' | 'kristoph-angry' | 'senpai-giddy' | 'baldi-angry ' | 'mangle-angry' | 'monika-angry' | 'green-monika' | 'neon' | 'matt-angry' | 'jackson' | 'mario-angry' | 'colt-angryd2' | 'colt-angryd2corrupted':
+				DAD_X += 150;
+				DAD_Y += 360;
+				camFollow.setPosition(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case 'monika-finale':
+				DAD_X += 15;
+				DAD_Y += 360;
+				camFollow.setPosition(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case 'lane-pixel':
+				DAD_X += 150;
+				DAD_Y += 560;
+				camFollow.setPosition(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y - 200);
+			case 'bf-gf-pixel' | 'bf-pixel' | 'bf-botan-pixel':
+				DAD_X += 150;
+				DAD_Y += 460;
+				camFollow.setPosition(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case 'bf-sky':
+				DAD_X -= 100;
+				DAD_Y += 400;
+				camFollow.setPosition(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case 'bf-whitty-pixel':
+				DAD_X += 150;
+				DAD_Y += 400;
+				camFollow.setPosition(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case 'gura-amelia-pixel':
+				DAD_X += 140;
+				DAD_Y += 400;
+				camFollow.setPosition(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case 'bitdad' | 'bitdadBSide' | 'bitdadcrazy':
+				DAD_Y += 75;
+				camFollow.setPosition(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case 'spirit' | 'spirit-glitchy':
+				DAD_X -= 150;
+				DAD_Y += 100;
+				camFollow.setPosition(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y + 200);
+			case 'sky-annoyed':
+				DAD_Y -= 20;
+			case 'impostor':
+				camFollow.y += -200;
+				camFollow.x += 400;
+				DAD_Y += 390;
+				DAD_X -= 100;
+			case 'updike':
+				camFollow.setPosition(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case 'bob' | 'angrybob':
+				camFollow.x += 600;
+				DAD_Y += 280;	
+			case 'cjClone':
+				DAD_X -= 250;
+				DAD_Y -= 150;			
+				if (SONG.song.toLowerCase() == 'expurgation')
+				{
+					dad.visible = false;
+					GF_X += 300;
+					GF_Y -= 25;
+				}			
+			case 'momi':
+				camFollow.setPosition(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+				DAD_Y += 50;
+			case 'rosie' | 'rosie-angry' | 'rosie-furious':
+				DAD_Y += 100;
+			case 'sh-carol' | 'sarvente-lucifer':
+				DAD_X -= 70;
+				DAD_Y -= 275;
+			case 'garcello' | 'garcellotired' | 'garcellodead':
+				DAD_X -= 100;
+			case 'lucian':
+				DAD_X -= 30;
+				DAD_Y -= 60;
+				camFollow.x += 300;
+				camFollow.y -= 15;
+			case 'abby':
+				DAD_X -= 157;
+				DAD_Y += 202;
+				camFollow.x += 300;
+				camFollow.y -= 15;
+			case 'abby-mad':
+				DAD_X -= 24;
+				DAD_Y += 260;
+				camFollow.x += 300;
+				camFollow.y -= 15;
+			case 'roro':
+				DAD_X -= 500;
+			case 'zardy':
+				camFollow.setPosition(dad.getGraphicMidpoint().x, dad.getGraphicMidpoint().y + 240);
+				DAD_X -= 80;
+			case "matthurt2":
+				DAD_Y += 400;
+				DAD_X += 100;
+			case 'bf-pixel' | 'bf-pixeld4BSide' | 'bf-pixeld4':
+				DAD_X += 300;
+				DAD_Y += 150;
+			case 'senpai' | 'senpai-giddy' | 'senpai-angry' | 'monika' | 'monika-angry':
+				DAD_X += 150;
+				DAD_Y -= 50;
+				camFollow.setPosition(dad.getMidpoint().x - 100, dad.getMidpoint().y - 430);
+		}
+	}
 	var danced:Bool = false;
 
 	override function stepHit()
@@ -5258,9 +5440,9 @@ var isbf4:Bool = false;
 			switch (curStep)
    			{
        			case 512: 
-            		ModchartState.changeDadCharacter('shaggy', PlayState.instance.DAD_X, PlayState.instance.DAD_Y);
+            		ModchartState.changeDadCharacter('rshaggy', PlayState.instance.DAD_X, PlayState.instance.DAD_Y);
         		case 629: 
-					ModchartState.changeBoyfriendCharacter('qt-kb-both', PlayState.instance.BF_X, PlayState.instance.BF_Y);
+					ModchartState.changeBoyfriendCharacter('robot', PlayState.instance.BF_X, PlayState.instance.BF_Y);
        			case 832:
            			ModchartState.changeDadCharacter('whitty', PlayState.instance.DAD_X, PlayState.instance.DAD_Y);
         		case 959:
@@ -5270,7 +5452,7 @@ var isbf4:Bool = false;
 				case 1215:
 					ModchartState.changeBoyfriendCharacter('tabi', PlayState.instance.BF_X, PlayState.instance.BF_Y);
 				case 1343:
-					ModchartState.changeDadCharacter('shaggy', PlayState.instance.DAD_X, PlayState.instance.DAD_Y);
+					ModchartState.changeDadCharacter('agoti', PlayState.instance.DAD_X, PlayState.instance.DAD_Y);
 				case 1984: //heyyyy, i was born this year. jkkkkkkkkkkkk //cheeky turn
 					ModchartState.changeBoyfriendCharacter('cheeky', PlayState.instance.BF_X, PlayState.instance.BF_Y);
 				case 2112: 
@@ -5280,38 +5462,38 @@ var isbf4:Bool = false;
 				case 2624:
 					dad2.visible = true;
 					ModchartState.changeDadCharacter('nonsense', PlayState.instance.DAD_X, PlayState.instance.DAD_Y);
-					ModchartState.changeDad2CharacterBetter(PlayState.instance.DAD_X, PlayState.instance.DAD_Y, 'sarvente');
+					ModchartState.changeDad2CharacterBetter(PlayState.dad2.x, PlayState.dad2.y, 'sarvente');
 				case 2751:
 					bf2.visible = true;
-					ModchartState.changeBoyfriendCharacter('bambi', PlayState.instance.DAD_X, PlayState.instance.DAD_Y);
-					ModchartState.changeBoyfriend2CharacterBetter(PlayState.instance.DAD_X, PlayState.instance.DAD_Y, 'ruv');
+					ModchartState.changeBoyfriendCharacter('bambi', PlayState.instance.BF_X, PlayState.instance.BF_Y);
+					ModchartState.changeBoyfriend2CharacterBetter(PlayState.bf2.x, PlayState.bf2.y, 'ruv');
 				case 2880:
 					ModchartState.changeDadCharacter('selever', PlayState.instance.DAD_X, PlayState.instance.DAD_Y);
-					ModchartState.changeDad2CharacterBetter(PlayState.instance.DAD_X, PlayState.instance.DAD_Y, 'exe');
+					ModchartState.changeDad2CharacterBetter(PlayState.dad2.x, PlayState.dad2.y, 'exe');
 				case 3008:
-					ModchartState.changeBoyfriendCharacter('ron', PlayState.instance.DAD_X, PlayState.instance.DAD_Y);
-					ModchartState.changeBoyfriend2CharacterBetter(PlayState.instance.DAD_X, PlayState.instance.DAD_Y, 'garcello');
+					ModchartState.changeBoyfriendCharacter('ron', PlayState.instance.BF_X, PlayState.instance.BF_Y);
+					ModchartState.changeBoyfriend2CharacterBetter(PlayState.bf2.x, PlayState.bf2.y, 'garcello');
 				case 3136: 
 					ModchartState.changeDadCharacter('sans', PlayState.instance.DAD_X, PlayState.instance.DAD_Y);
-					ModchartState.changeDad2CharacterBetter(PlayState.instance.DAD_X, PlayState.instance.DAD_Y, 'eggdickface'); //eggman
+					ModchartState.changeDad2CharacterBetter(PlayState.dad2.x, PlayState.dad2.y, 'eggdickface'); //eggman
 				case 3712: 
 					dad3.visible = true;
-					ModchartState.changeDadCharacter('qt-kb-both', PlayState.instance.DAD_X, PlayState.instance.DAD_Y);
-					ModchartState.changeDad2CharacterBetter(PlayState.instance.DAD_X, PlayState.instance.DAD_Y, 'bf-gf');
-					ModchartState.changeDad3CharacterBetter(PlayState.instance.DAD_X, PlayState.instance.DAD_Y, 'impostor');
+					ModchartState.changeDadCharacter('qt', PlayState.instance.DAD_X, PlayState.instance.DAD_Y);
+					ModchartState.changeDad2CharacterBetter(PlayState.dad2.x, PlayState.dad2.y, 'bf-gf');
+					ModchartState.changeDad3CharacterBetter(PlayState.dad3.x, PlayState.dad3.y, 'impostor');
 				case 3840: 
 					bf3.visible = true;
-					ModchartState.changeBoyfriendCharacter('hd-monika', PlayState.instance.DAD_X, PlayState.instance.DAD_Y);
-					ModchartState.changeBoyfriend2CharacterBetter(PlayState.instance.DAD_X, PlayState.instance.DAD_Y, 'tails');
-					ModchartState.changeBoyfriend2CharacterBetter(PlayState.instance.DAD_X, PlayState.instance.DAD_Y, 'sunky'); //sunky
+					ModchartState.changeBoyfriendCharacter('hd-monika', PlayState.instance.BF_X, PlayState.instance.BF_Y);
+					ModchartState.changeBoyfriend2CharacterBetter(PlayState.bf2.x, PlayState.bf2.y, 'tails');
+					ModchartState.changeBoyfriend2CharacterBetter(PlayState.bf3.x, PlayState.bf3.y, 'sunky'); //sunky
 				case 3968:
 					ModchartState.changeDadCharacter('baldi-angry', PlayState.instance.DAD_X, PlayState.instance.DAD_Y);
-					ModchartState.changeDad2CharacterBetter(PlayState.instance.DAD_X, PlayState.instance.DAD_Y, 'missingno');
-					ModchartState.changeDad3CharacterBetter(PlayState.instance.DAD_X, PlayState.instance.DAD_Y, 'blantad'); //blantad
+					ModchartState.changeDad2CharacterBetter(PlayState.dad2.x, PlayState.dad2.y, 'missingno');
+					ModchartState.changeDad3CharacterBetter(PlayState.dad3.x, PlayState.dad3.y, 'blantad'); //blantad
 				case 4096: 
-					ModchartState.changeBoyfriendCharacter('exgf', PlayState.instance.DAD_X, PlayState.instance.DAD_Y); //ayana
-					ModchartState.changeBoyfriend2CharacterBetter(PlayState.instance.DAD_X, PlayState.instance.DAD_Y, 'kapi');
-					ModchartState.changeBoyfriend2CharacterBetter(PlayState.instance.DAD_X, PlayState.instance.DAD_Y, 'maijin');
+					ModchartState.changeBoyfriendCharacter('exgf', PlayState.instance.BF_X, PlayState.instance.BF_Y); //ayana
+					ModchartState.changeBoyfriend2CharacterBetter(PlayState.bf2.x, PlayState.bf2.y, 'kapi');
+					ModchartState.changeBoyfriend2CharacterBetter(PlayState.bf3.x, PlayState.bf3.y, 'maijin');
     		}
 		}
 
@@ -5387,8 +5569,10 @@ var isbf4:Bool = false;
 			// Conductor.changeBPM(SONG.bpm);
 
 			// Dad doesnt interupt his own notes
+			try {
 			if (SONG.notes[Math.floor(curStep / 16)].mustHitSection && dad.curCharacter != 'gf')
 				dad.dance();
+		}catch (exception) {trace(exception);}
 		}
 		// FlxG.log.add('change bpm' + SONG.notes[Std.int(curStep / 16)].changeBPM);
 		wiggleShit.update(Conductor.crochet);
@@ -5421,10 +5605,11 @@ var isbf4:Bool = false;
 			gf.dance();
 		}
 
+		try {
 		if (!boyfriend.animation.curAnim.name.startsWith("sing"))
 		{
 			boyfriend.playAnim('idle');
-		}
+		}} catch (exception) {trace(exception);}
 		
 
 		if (curBeat % 8 == 7 && curSong == 'Bopeebo')

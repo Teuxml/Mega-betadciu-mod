@@ -386,6 +386,8 @@ class HealthIcon extends FlxSprite
 			animation.add('garcellodead', [442, 443], 0, false, isPlayer);
 			animation.add('kapi-angry', [444], 0, false, isPlayer);
 			animation.add('qt-kb', [445], 0, false, isPlayer);
+			animation.add('robot', [445], 0, false, isPlayer);
+			animation.add('qt', [445], 0, false, isPlayer);
 			animation.add('duet-sm', [446, 447], 0, false, isPlayer);
 			animation.add('parents-christmas-angel', [448, 449], 0, false, isPlayer);
 			animation.add('shaggy-matt', [450, 451], 0, false, isPlayer);
