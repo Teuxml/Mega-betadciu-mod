@@ -101,6 +101,7 @@ class PlayState extends MusicBeatState
 	public static var mania:Int = 0;
 	public static var keyAmmo:Array<Int> = [4, 6, 9, 5, 7, 8, 21];
 	private var ctrTime:Float = 0;
+	public static var isDead:Bool = false;
 	//public var luaArray:Array<FunkinLua> = [];
 
 	public static var songPosBG:FlxSprite;
@@ -162,8 +163,8 @@ class PlayState extends MusicBeatState
 	public var GF_X:Float = 400;
 	public var GF_Y:Float = 130;
 
-	/*public var modchartTweens:Map<String, FlxTween> = new Map<String, FlxTween>();
-	public var modchartSprites:Map<String, ModchartSprite> = new Map<String, ModchartSprite>();
+	/*public var modchartTweens:Map<String, FlxTween> = new Map<String, FlxTween>();*/
+	public var modchartSprites:Map<String, Dynamic> = new Map<String, Dynamic>();/*
 	public var modchartTimers:Map<String, FlxTimer> = new Map<String, FlxTimer>();
 	public var modchartSounds:Map<String, FlxSound> = new Map<String, FlxSound>();
 	public var modchartTexts:Map<String, ModchartText> = new Map<String, ModchartText>();
@@ -411,6 +412,7 @@ class PlayState extends MusicBeatState
 
 		persistentUpdate = true;
 		persistentDraw = true;
+		isDead = false;
 
 		mania = SONG.mania;
 
@@ -493,6 +495,7 @@ class PlayState extends MusicBeatState
 		switch(stageCheck)
 		{
 			case 'volcano' | 'purgatory':
+				try {
 				var boxfloor:FlxSprite = new FlxSprite(-400, -200);
 				boxfloor.frames = Paths.getSparrowAtlas('volcanoanimated', 'purgatory');
 				boxfloor.animation.addByPrefix('floorbang', "BUBBLE", 24);
@@ -506,6 +509,7 @@ class PlayState extends MusicBeatState
 				isbf3 = true;
 				isdad2 = true;
 				isdad3 = true;
+				} catch (exception) {trace(exception);}
 			case 'halloween': 
 				curStage = 'spooky';
 				halloweenLevel = true;
@@ -809,36 +813,36 @@ class PlayState extends MusicBeatState
 					luaModchartS.executeState('stage',['psychEngine']);
 				}
 				
-				luaModchartS.makeLuaSprite('sky', 'beachhouse/sky', -600, -400);
-				luaModchartS.setLuaSpriteScrollFactor('forest', 1, 1);
-				luaModchartS.scaleObject('sky', 3, 3);
+				luaModchartS.makePsychLuaSprite('sky', 'beachhouse/sky', -600, -400);
+				luaModchartS.setPsychLuaSpriteScrollFactor('forest', 1, 1);
+				luaModchartS.scalePsychObject('sky', 3, 3);
 
-				luaModchartS.makeLuaSprite('forest', 'beachhouse/forest', -300, -390);
-				luaModchartS.setLuaSpriteScrollFactor('forest', .7, .7);
-				luaModchartS.scaleObject('forest', 0.6, 0.6);
+				luaModchartS.makePsychLuaSprite('forest', 'beachhouse/forest', -300, -390);
+				luaModchartS.setPsychLuaSpriteScrollFactor('forest', .7, .7);
+				luaModchartS.scalePsychObject('forest', 0.6, 0.6);
 
-    			luaModchartS.makeAnimatedLuaSprite('glitch1', 'beachhouse/glitch1', -240, -280);
-    			luaModchartS.addAnimationByPrefix('glitch1', 'Symbol 1', 'Symbol 1', 24);
-    			luaModchartS.setLuaSpriteScrollFactor('glitch1', 1, 1);
-    			luaModchartS.scaleObject('glitch1', 1, 1);
+    			luaModchartS.makePsychAnimatedLuaSprite('glitch1', 'beachhouse/glitch1', -240, -280);
+    			luaModchartS.addPsychAnimationByPrefix('glitch1', 'Symbol 1', 'Symbol 1', 24);
+    			luaModchartS.setPsychLuaSpriteScrollFactor('glitch1', 1, 1);
+    			luaModchartS.scalePsychObject('glitch1', 1, 1);
 
-				luaModchartS.makeLuaSprite('sandfloor', 'beachhouse/sandfloor', -600, -475);
-				luaModchartS.setLuaSpriteScrollFactor('sandfloor', 1, 1);
-				luaModchartS.scaleObject('sandfloor', .6, .6);
+				luaModchartS.makePsychLuaSprite('sandfloor', 'beachhouse/sandfloor', -600, -475);
+				luaModchartS.setPsychLuaSpriteScrollFactor('sandfloor', 1, 1);
+				luaModchartS.scalePsychObject('sandfloor', .6, .6);
 
-				luaModchartS.makeLuaSprite('tree', 'beachhouse/tree', -600, -370);
-				luaModchartS.setLuaSpriteScrollFactor('tree', .9, .9);
-				luaModchartS.scaleObject('tree', .7, .7);
+				luaModchartS.makePsychLuaSprite('tree', 'beachhouse/tree', -600, -370);
+				luaModchartS.setPsychLuaSpriteScrollFactor('tree', .9, .9);
+				luaModchartS.scalePsychObject('tree', .7, .7);
 
-				luaModchartS.makeLuaSprite('water', 'beachhouse/water', -700, 520);
-				luaModchartS.setLuaSpriteScrollFactor('water', 1, 1);
-				luaModchartS.scaleObject('water', .7, .6);
+				luaModchartS.makePsychLuaSprite('water', 'beachhouse/water', -700, 520);
+				luaModchartS.setPsychLuaSpriteScrollFactor('water', 1, 1);
+				luaModchartS.scalePsychObject('water', .7, .6);
 	
 	
-				luaModchartS.makeAnimatedLuaSprite('glitch', 'static', -600, -300);
-				luaModchartS.scaleObject('glitch', 2, 2);
-				luaModchartS.addAnimationByPrefix('glitch', 'glitchout', 'static glitch', 24, true);
-				luaModchartS.objectPlayAnimation('glitch', 'glitchout');
+				luaModchartS.makePsychAnimatedLuaSprite('glitch', 'static', -600, -300);
+				luaModchartS.scalePsychObject('glitch', 2, 2);
+				luaModchartS.addPsychAnimationByPrefix('glitch', 'glitchout', 'static glitch', 24, true);
+				luaModchartS.psychObjectPlayAnimation('glitch', 'glitchout');
 	
 				luaModchartS.addLuaSprite('sky', false);
 				luaModchartS.addLuaSprite('forest', false);
@@ -3155,6 +3159,7 @@ class PlayState extends MusicBeatState
 			persistentUpdate = false;
 			persistentDraw = false;
 			paused = true;
+			isDead = true;
 
 			vocals.stop();
 			FlxG.sound.music.stop();

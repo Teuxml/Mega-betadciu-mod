@@ -27,6 +27,8 @@ import flixel.addons.effects.FlxTrail;
 import flixel.addons.effects.FlxTrailArea;
 import flixel.util.FlxTimer;
 
+using StringTools;
+
 class ModchartState 
 {
 	//public static var shaders:Array<LuaShader> = null;
@@ -1216,5 +1218,113 @@ class ModchartState
     {
         return new ModchartState();
     }
+
+	public function makePsychLuaSprite(tag:String, image:String, x:Float, y:Float)
+	{
+		tag = tag.replace('.', '');
+		resetSpriteTag(tag);
+		var leSprite:FlxSprite = new FlxSprite(x, y);
+		if(image != null && image.length > 0)
+		{
+			leSprite.loadGraphic(Paths.image(image));
+		}
+		leSprite.antialiasing = FlxG.save.data.globalAntialiasing;
+		PlayState.instance.modchartSprites.set(tag, leSprite);
+		leSprite.active = true;
+	}
+
+	public function setPsychLuaSpriteScrollFactor(tag:String, scrollX:Float, scrollY:Float)
+	{
+		trace("setLuaSpriteScrollFactor is deprecated! Use setScrollFactor instead", false, true);
+		PlayState.instance.modchartSprites.get(tag).scrollFactor.set(scrollX, scrollY);
+	}
+
+	public function scalePsychObject(obj:String, x:Float, y:Float)
+	{
+		var shit:FlxSprite = PlayState.instance.modchartSprites.get(obj);
+		shit.scale.set(x, y);
+		shit.updateHitbox();
+		return;
+	}
+
+	public function makePsychAnimatedLuaSprite(tag:String, image:String, x:Float, y:Float, ?spriteType:String = "sparrow")
+	{
+		tag = tag.replace('.', '');
+		resetSpriteTag(tag);
+		var leSprite:FlxSprite = new FlxSprite(x, y);
+			
+		leSprite.frames = Paths.getSparrowAtlas(image);
+		//loadFrames(leSprite, image, spriteType);
+		leSprite.antialiasing = FlxG.save.data.globalAntialiasing;
+		PlayState.instance.modchartSprites.set(tag, leSprite);
+	}
+
+	public function addPsychAnimationByPrefix(obj:String, name:String, prefix:String, framerate:Int = 24, loop:Bool = true)
+	{
+		var cock:FlxSprite = PlayState.instance.modchartSprites.get(obj);
+		cock.animation.addByPrefix(name, prefix, framerate, loop);
+		if(cock.animation.curAnim == null) {
+			cock.animation.play(name, true);
+		}
+		return;	
+	}
+
+	public function psychObjectPlayAnimation(obj:String, name:String, forced:Bool = false)
+	{
+		PlayState.instance.modchartSprites.get(obj).animation.play(name, forced);
+		return;		
+
+		var spr:FlxSprite = Reflect.getProperty(getInstance(), obj);
+		if(spr != null) {
+			spr.animation.play(name, forced);
+		}
+	}
+	
+	public function addLuaSprite(tag:String, front:Bool = false)
+	{
+		var shit:FlxSprite = PlayState.instance.modchartSprites.get(tag);
+					if(front)
+					{
+						getInstance().add(shit);
+					}
+					else
+					{
+						if(PlayState.isDead)
+						{
+							GameOverSubstate.instance.insert(Std.int(GameOverSubstate.instance.bf.x), shit);
+						}
+						else
+						{
+							var position:Int = Std.int(PlayState.gf.x);
+							if(Std.int(PlayState.boyfriend.x) < position) {
+								position = Std.int(PlayState.boyfriend.x);
+							} else if(Std.int(PlayState.dad.x) < position) {
+								position = Std.int(PlayState.dad.x);
+							}
+							PlayState.instance.insert(position, shit);
+						}
+					}
+			//		shit.isOnScreen = true;
+					//trace('added a thing: ' + tag);			
+	}
+
+	function getInstance()
+	{
+		return PlayState.isDead ? GameOverSubstate.instance : PlayState.instance;
+	}
+
+	function resetSpriteTag(tag:String) {
+		if(!PlayState.instance.modchartSprites.exists(tag)) {
+			return;
+		}
+		
+		var pee:FlxSprite = PlayState.instance.modchartSprites.get(tag);
+		pee.kill();
+	//	if(pee.isOnScreen(PlayState.camHUD)) {
+			PlayState.instance.remove(pee, true);
+	//	}
+		pee.destroy();
+		PlayState.instance.modchartSprites.remove(tag);
+	}
 }
 #end
